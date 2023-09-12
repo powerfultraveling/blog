@@ -1,0 +1,41 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .prettierignore"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@nuxtjs/stylelint-module": "^5.1.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-nuxt": "^4.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "nuxt": "^3.7.0",
+    "postcss": "^8.4.29",
+    "postcss-custom-properties": "^13.3.0",
+    "postcss-html": "^1.5.0",
+    "prettier": "^3.0.3",
+    "stylelint": "^15.10.3",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^34.0.0",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-stylelint": "^5.1.1",
+    "vue-tsc": "^1.8.10"
+  },
+  "dependencies": {
+    "vite-svg-loader": "^4.0.0"
+  }
+}
