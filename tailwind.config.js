@@ -1,7 +1,5 @@
 import { inset, width } from './tailwind/config'
 
-console.log('wi', width)
-
 module.exports = {
   important: true,
   content: [
