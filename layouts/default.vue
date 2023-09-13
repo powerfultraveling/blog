@@ -1,6 +1,8 @@
 <template>
-  <div>
+  <div class="min-h-screen bg-primary">
     <DefaultHeader />
-    <slot />
+    <div class="mb-auto bg-primary">
+      <slot />
+    </div>
   </div>
 </template>

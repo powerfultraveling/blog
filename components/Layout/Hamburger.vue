@@ -1,39 +1,54 @@
 <template>
-  <div class="hamburger">
+  <div class="hamburger" :class="{ opened: active }" @click="emits('change')">
     <div class="stick stick-top" />
-    <div
-      class="stick stick-bottom"
-    />
+    <div class="stick stick-bottom" />
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+interface Props {
+  active: boolean
+}
+
+defineProps<Props>()
+
+const emits = defineEmits(['change'])
+</script>
 
 <style scoped>
-        .hamburger {
-        @apply w-[108px] h-7 relative;
+.hamburger {
+  @apply w-27 h-7 relative cursor-pointer;
 
-        &:hover {
-            .stick-top {
-                @apply top-1/4;
-            }
+  .stick {
+    @apply bg-black absolute left-0 right-0 h-[1px] transition-all duration-200;
+  }
 
-            .stick-bottom {
-                @apply bottom-1/4;
-            }
-        }
-        }
+  .stick-top {
+    @apply top-1;
+  }
 
-        .stick {
-        @apply bg-black absolute left-0 right-0 h-[1px] transition-all duration-100;
-        }
+  .stick-bottom {
+    @apply bottom-1;
+  }
 
-        .stick-top {
-        @apply top-0;
-        }
+  &:hover {
+    .stick-top {
+      @apply top-1/4;
+    }
 
-        .stick-bottom {
-        @apply bottom-0;
-        }
+    .stick-bottom {
+      @apply bottom-1/4;
+    }
+  }
 
+  &.opened {
+    .stick-top {
+      @apply top-1/2 rotate-12;
+    }
+
+    .stick-bottom {
+      @apply bottom-1/2 -rotate-12;
+    }
+  }
+}
 </style>
