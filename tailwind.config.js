@@ -1,4 +1,4 @@
-import { inset, width } from './tailwind/config'
+import { inset, width, spacing } from './tailwind/config'
 
 module.exports = {
   important: true,
@@ -89,7 +89,8 @@ module.exports = {
         '9xl': ['3rem', '125%']
       },
       inset,
-      width
+      width,
+      spacing
     }
   },
   plugins: []
