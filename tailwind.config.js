@@ -1,4 +1,5 @@
 import { inset, width, spacing } from './tailwind/config'
+import { button, helper, ratio } from './tailwind/plugin'
 
 module.exports = {
   important: true,
@@ -93,5 +94,5 @@ module.exports = {
       spacing
     }
   },
-  plugins: []
+  plugins: [button, helper, ratio]
 }
