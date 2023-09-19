@@ -6,8 +6,4 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-const title: string = 'dsds'
-
-console.log(title)
-</script>
+<script lang="ts" setup></script>
