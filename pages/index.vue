@@ -1,7 +1,7 @@
 <template>
   <div>
     <HomeAbout />
-    <DemoCarousel />
+    <HomeProjects />
   </div>
 </template>
 
