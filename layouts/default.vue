@@ -4,5 +4,6 @@
     <div class="mb-auto bg-primary">
       <slot />
     </div>
+    <DefaultFooter />
   </div>
 </template>
