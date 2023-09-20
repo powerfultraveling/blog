@@ -1,11 +1,9 @@
 <template>
   <header class="w-full bg-primary relative">
     <div class="header-wrapper container">
-      <div class="text-[30px]">ぼくのうち</div>
-      <div class="space-x-4 flex items-center">
-        <HeaderButtons />
-        <Hamburger :active="menuOpened" @change="menuOpened = !menuOpened" />
-      </div>
+      <div class="text-[30px] font-serif font-bold">蔡藝屋</div>
+      <HeaderButtons class="hidden lg:flex" />
+      <Hamburger class="block lg:hidden" :active="menuOpened" @change="menuOpened = !menuOpened" />
     </div>
     <div class="container flex justify-center">
       <HeaderMenu class="menu flex" :class="{ opened: menuOpened }" />
@@ -23,10 +21,10 @@ const menuOpened = ref(false)
 }
 
 .menu {
-  @apply absolute max-h-0 overflow-hidden;
+  @apply absolute opacity-0 z-20 h-screen;
 
   &.opened {
-    @apply max-h-[1280px];
+    @apply opacity-90;
   }
 }
 </style>
