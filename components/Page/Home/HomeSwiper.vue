@@ -1,7 +1,7 @@
 <template>
-  <div class="py-6 border-b border-black">
-    <div class="text-2xl container">{{ title }}</div>
-    <div class="container relative">
+  <div class="py-6 border-b border-black container">
+    <div class="text-2xl">{{ title }}</div>
+    <div class="relative">
       <PSwiper :slides="slides" :options="options">
         <template #controls="{ slidePrev, slideNext, isEnd, isBeginning }">
           <button :class="{ 'text-gray': isBeginning }" class="control left-0" @click="slidePrev">
@@ -79,7 +79,7 @@ const options = computed(() => ({
   }
 
   .caret-stroke {
-    @apply bg-black w-50 h-px;
+    @apply w-10 bg-black h-px md:w-30 lg:w-50;
   }
 }
 
