@@ -1,17 +1,19 @@
 <template>
   <div class="flex items-center space-x-2">
-    <NuxtLink v-for="{ to, label } in links" :key="label" :to="to">{{ label }}</NuxtLink>
+    <NuxtLink v-for="{ to, label } in links" :key="label" :to="to" class="font-serif">
+      {{ label }}
+    </NuxtLink>
   </div>
 </template>
 
 <script lang="ts" setup>
 const links = [
   {
-    label: 'わたし',
+    label: '關於我',
     to: '/'
   },
   {
-    label: '作品について',
+    label: '作品集',
     to: '/'
   }
 ]
