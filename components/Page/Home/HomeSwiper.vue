@@ -1,7 +1,7 @@
 <template>
-  <div class="py-6 border-b border-black">
-    <div class="text-2xl container">{{ title }}</div>
-    <div class="container relative">
+  <div class="py-6 border-b border-black container">
+    <div class="text-5xl font-serif font-medium">{{ title }}</div>
+    <div class="relative">
       <PSwiper :slides="slides" :options="options">
         <template #controls="{ slidePrev, slideNext, isEnd, isBeginning }">
           <button :class="{ 'text-gray': isBeginning }" class="control left-0" @click="slidePrev">
@@ -64,7 +64,7 @@ const options = computed(() => ({
 
 <style scoped>
 .dot {
-  @apply rounded-full w-2 h-2 border border-black;
+  @apply rounded-full w-2 h-2 border border-black cursor-pointer;
 
   &.active {
     @apply bg-black;
@@ -75,11 +75,11 @@ const options = computed(() => ({
   @apply absolute top-half -translate-y-half hoverable z-10;
 
   .caret {
-    @apply bg-black h-6 w-px -rotate-45 origin-bottom;
+    @apply h-3 bg-black w-px -rotate-45 origin-bottom md:h-6;
   }
 
   .caret-stroke {
-    @apply bg-black w-50 h-px;
+    @apply w-10 bg-black h-px md:w-30 lg:w-40 xl:w-50;
   }
 }
 

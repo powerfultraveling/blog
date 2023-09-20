@@ -1,5 +1,5 @@
 <template>
-  <HomeSwiper :slides="slides" title="お知らせ" />
+  <HomeSwiper :slides="slides" title="專案" />
 </template>
 
 <script lang="ts" setup>
