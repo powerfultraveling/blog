@@ -1,15 +1,16 @@
 <template>
   <div class="w-full flex justify-center container border-b border-black">
     <div class="content-wrapper">
-      <div
-        class="w-60 h-60 bg-white rounded-full border border-black flex justify-center items-center shrink-0"
-      >
+      <div class="w-50 h-50 border border-black flex justify-center items-center shrink-0">
         <img src="~/assets/images/profile.jpeg" />
       </div>
-      <div class="w-full leading-8 md:w-100">
-        大學讀法律和外文，誤打誤撞之下開始寫程式 目前有兩年前端開發經驗，擅長使用 Vue
-        及相關技術開發，注重程式碼品質、熱愛分享。
-        寫程式之外，我喜歡爬山、打籃球、彈鋼琴、書店和音樂。
+      <div class="font-serif">
+        <div class="text-5xl mb-5">蔡恂藝</div>
+        <div class="w-full leading-8 md:w-100">
+          大學讀法律和外文，誤打誤撞之下開始寫程式 目前有兩年前端開發經驗，擅長使用 Vue
+          及相關技術開發，注重程式碼品質、熱愛分享。
+          寫程式之外，我喜歡爬山、打籃球、彈鋼琴、書店和音樂。
+        </div>
       </div>
     </div>
   </div>
@@ -22,7 +23,7 @@
   @apply relative flex flex-col items-center space-y-5 md:flex-row md:space-x-30 py-10;
 
   img {
-    @apply w-40 h-40 rounded-full object-contain transition-all duration-300;
+    @apply w-40 h-40 object-contain transition-all duration-300;
   }
 }
 
