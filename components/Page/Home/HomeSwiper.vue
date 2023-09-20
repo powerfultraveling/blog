@@ -75,11 +75,11 @@ const options = computed(() => ({
   @apply absolute top-half -translate-y-half hoverable z-10;
 
   .caret {
-    @apply bg-black h-6 w-px -rotate-45 origin-bottom;
+    @apply h-3 bg-black w-px -rotate-45 origin-bottom md:h-6;
   }
 
   .caret-stroke {
-    @apply w-10 bg-black h-px md:w-30 lg:w-50;
+    @apply w-10 bg-black h-px md:w-30 lg:w-40 xl:w-50;
   }
 }
 
