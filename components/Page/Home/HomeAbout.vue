@@ -1,18 +1,15 @@
 <template>
-  <div class="flex justify-center container border-b border-black">
-    <div class="content-wrapper container">
+  <div class="w-full flex justify-center container border-b border-black">
+    <div class="content-wrapper">
       <div
-        class="w-60 h-60 bg-white rounded-full border border-black flex justify-center items-center"
+        class="w-60 h-60 bg-white rounded-full border border-black flex justify-center items-center shrink-0"
       >
-        <img src="~/assets/images/gurico.jpeg" />
+        <img src="~/assets/images/profile.jpeg" />
       </div>
-      <div class="w-140">
-        この度、砧書体制作所（代表：片岡朗）は、2022 年1
-        月より株式会社光伸プランニング（代表取締役社長：原壯）が運営することとなりました。
-        株式会社光伸プランニングは片岡の義理の息子が代表を務める会社です。
-        運営は株式会社光伸プランニングとなりますが、ベンダー名『砧書体制作所』は継続いたします。
-        片岡朗は相談役として引き続き砧書体制作所のフォント制作に専念します。
-        各種サービスもこれまでと変わらない形で提供いたしますので、今後とも変わらぬご愛顧を賜りますようお願い申し上げます。
+      <div class="w-full leading-8 md:w-100">
+        大學讀法律和外文，誤打誤撞之下開始寫程式 目前有兩年前端開發經驗，擅長使用 Vue
+        及相關技術開發，注重程式碼品質、熱愛分享。
+        寫程式之外，我喜歡爬山、打籃球、彈鋼琴、書店和音樂。
       </div>
     </div>
   </div>
@@ -22,10 +19,10 @@
 
 <style scoped>
 .content-wrapper {
-  @apply relative flex items-center space-x-70 py-10;
+  @apply relative flex flex-col items-center space-y-5 md:flex-row md:space-x-30 py-10;
 
   img {
-    @apply w-55 h-55 rounded-full object-contain transition-all duration-300;
+    @apply w-40 h-40 rounded-full object-contain transition-all duration-300;
   }
 }
 
