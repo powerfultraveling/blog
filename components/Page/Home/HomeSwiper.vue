@@ -4,26 +4,36 @@
     <div class="relative">
       <PSwiper :slides="slides" :options="options">
         <template #controls="{ slidePrev, slideNext, isEnd, isBeginning }">
-          <button :class="{ 'text-gray': isBeginning }" class="control left-0" @click="slidePrev">
-            <div class="caret rotate-45"></div>
-            <div class="caret-stroke"></div>
-          </button>
-          <button :class="{ 'text-gray': isEnd }" class="control right-0" @click="slideNext">
-            <div class="flex justify-end">
-              <div class="caret"></div>
+          <div class="flex justify-center py-5">
+            <div class="flex items-center space-x-5">
+              <button
+                :class="{ 'text-gray': isBeginning }"
+                class="control left-0"
+                @click="slidePrev"
+              >
+                <div class="caret rotate-45"></div>
+                <div class="caret-stroke"></div>
+              </button>
+              <button :class="{ 'text-gray': isEnd }" class="control right-0" @click="slideNext">
+                <div class="flex justify-end">
+                  <div class="caret"></div>
+                </div>
+                <div class="caret-stroke"></div>
+              </button>
             </div>
-            <div class="caret-stroke"></div>
-          </button>
+          </div>
         </template>
 
         <template #default="{ slide }">
-          <div>
-            <img :src="slide.image" />
-            <div class="pt-2 flex items-center space-x-3">
-              <div>{{ slide.date }}</div>
-              <div>{{ slide.label }}</div>
+          <a :href="slide.link" target="_blank" class="slide-card-wrapper">
+            <div class="slide-card">
+              <img :src="slide.image" class="w-50 mb-5 lg:mb-0" />
+              <div>
+                <div class="text-4xl mb-3">{{ slide.label }}</div>
+                <div class="">{{ slide.content }}</div>
+              </div>
             </div>
-          </div>
+          </a>
         </template>
 
         <template #pagination="{ slideTo, active }">
@@ -51,6 +61,7 @@ interface Props {
     image: string
     date: string
     label: string
+    content: string
   }[]
 }
 
@@ -63,6 +74,91 @@ const options = computed(() => ({
 </script>
 
 <style scoped>
+.slide-card-wrapper {
+  @apply bg-white h-full flex items-center relative;
+
+  &::before {
+    content: '';
+
+    @apply absolute bottom-0 left-0 w-0 h-0 border-b border-r border-black;
+  }
+
+  /* &:not(:hover)::before {
+    animation: bottom-right 3s 1 reverse;
+  } */
+
+  &:hover::before {
+    animation: bottom-right 1s forwards;
+  }
+
+  &::after {
+    content: '';
+
+    @apply absolute top-0 right-0 w-0 h-0 border-t border-l border-black;
+  }
+
+  /* &:not(:hover)::after {
+    animation: top-left 3s 1 reverse;
+  } */
+
+  &:hover::after {
+    animation: top-left 1s forwards;
+  }
+
+  @keyframes bottom-right {
+    0% {
+      width: 0;
+      height: 0;
+    }
+
+    25% {
+      width: 100%;
+      height: 0;
+    }
+
+    50% {
+      width: 100%;
+      height: 100%;
+    }
+
+    100% {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @keyframes top-left {
+    0% {
+      width: 0;
+      height: 0;
+    }
+
+    25% {
+      width: 0;
+      height: 0;
+    }
+
+    50% {
+      width: 0;
+      height: 0;
+    }
+
+    75% {
+      width: 100%;
+      height: 0;
+    }
+
+    100% {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .slide-card {
+    @apply bg-white flex flex-col items-center px-6 py-10 font-serif lg:flex-row lg:space-x-6;
+  }
+}
+
 .dot {
   @apply rounded-full w-2 h-2 border border-black cursor-pointer;
 
@@ -72,7 +168,7 @@ const options = computed(() => ({
 }
 
 .control {
-  @apply absolute top-half -translate-y-half hoverable z-10;
+  @apply top-half -translate-y-half hoverable z-10 md:absolute;
 
   .caret {
     @apply h-3 bg-black w-px -rotate-45 origin-bottom md:h-6;
@@ -84,6 +180,6 @@ const options = computed(() => ({
 }
 
 :deep(.swiper-slide) {
-  @apply px-[20%];
+  @apply h-auto md:px-[20%] !important;
 }
 </style>

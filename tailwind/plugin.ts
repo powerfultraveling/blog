@@ -66,7 +66,7 @@ export const helper = plugin(({ addUtilities }) => {
         '@apply absolute w-full h-full': {}
       },
       '> img': {
-        '@apply obkect-cover': {}
+        '@apply object-cover': {}
       }
     }
   })
