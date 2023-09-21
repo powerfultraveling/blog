@@ -4,25 +4,42 @@
     <div class="relative">
       <PSwiper :slides="slides" :options="options">
         <template #controls="{ slidePrev, slideNext, isEnd, isBeginning }">
-          <button :class="{ 'text-gray': isBeginning }" class="control left-0" @click="slidePrev">
-            <div class="caret rotate-45"></div>
-            <div class="caret-stroke"></div>
-          </button>
-          <button :class="{ 'text-gray': isEnd }" class="control right-0" @click="slideNext">
-            <div class="flex justify-end">
-              <div class="caret"></div>
+          <div class="flex justify-center py-5">
+            <div class="flex items-center space-x-5">
+              <button
+                :class="{ 'text-gray': isBeginning }"
+                class="control left-0"
+                @click="slidePrev"
+              >
+                <div class="caret rotate-45"></div>
+                <div class="caret-stroke"></div>
+              </button>
+              <button :class="{ 'text-gray': isEnd }" class="control right-0" @click="slideNext">
+                <div class="flex justify-end">
+                  <div class="caret"></div>
+                </div>
+                <div class="caret-stroke"></div>
+              </button>
             </div>
-            <div class="caret-stroke"></div>
-          </button>
+          </div>
         </template>
 
         <template #default="{ slide }">
-          <div>
-            <img :src="slide.image" />
-            <div class="pt-2 flex items-center space-x-3">
-              <div>{{ slide.date }}</div>
-              <div>{{ slide.label }}</div>
-            </div>
+          <div class="slide-card-wrapper h-full">
+            <a
+              :href="slide.link"
+              target="_blank"
+              class="bg-white h-full flex items-center relative z-10"
+            >
+              <div class="slide-card relative z-10">
+                <img :src="slide.image" class="w-50 mb-5 lg:mb-0" />
+                <div>
+                  <div class="text-4xl mb-3">{{ slide.label }}</div>
+                  <div class="">{{ slide.content }}</div>
+                </div>
+              </div>
+            </a>
+            <div class="shadow-block" />
           </div>
         </template>
 
@@ -51,6 +68,7 @@ interface Props {
     image: string
     date: string
     label: string
+    content: string
   }[]
 }
 
@@ -63,6 +81,26 @@ const options = computed(() => ({
 </script>
 
 <style scoped>
+.slide-card-wrapper {
+  @apply relative border border-white;
+
+  .slide-card {
+    @apply bg-white flex flex-col items-center px-6 py-10 font-serif transitable lg:flex-row lg:space-x-6;
+  }
+
+  .shadow-block {
+    @apply absolute bottom-0 left-0 bg-gray-darkest w-full h-full transitable;
+  }
+
+  &:hover {
+    @apply border border-gray-darkest;
+
+    .shadow-block {
+      @apply -translate-x-2 translate-y-2 md:-translate-x-4 md:translate-y-4 lg:-translate-x-7 lg:translate-y-7;
+    }
+  }
+}
+
 .dot {
   @apply rounded-full w-2 h-2 border border-black cursor-pointer;
 
@@ -72,18 +110,40 @@ const options = computed(() => ({
 }
 
 .control {
-  @apply absolute top-half -translate-y-half hoverable z-10;
+  @apply top-half -translate-y-half hoverable z-10 overflow-x-hidden relative md:absolute;
 
   .caret {
     @apply h-3 bg-black w-px -rotate-45 origin-bottom md:h-6;
   }
 
   .caret-stroke {
-    @apply w-10 bg-black h-px md:w-30 lg:w-40 xl:w-50;
+    @apply w-10 bg-black h-px relative md:w-30 lg:w-40 xl:w-50;
+  }
+
+  &::after {
+    content: '上一張 ^_^';
+
+    @apply text-transparent absolute right-0 bottom-0;
+  }
+
+  &:hover::after {
+    animation: train 3s linear infinite;
+
+    @apply text-black;
+  }
+}
+
+@keyframes train {
+  0% {
+    transform: translateX(20%);
+  }
+
+  100% {
+    transform: translateX(-400%);
   }
 }
 
 :deep(.swiper-slide) {
-  @apply px-[20%];
+  @apply h-auto px-[5%] py-3 md:px-[20%] md:py-3 lg:py-5 !important;
 }
 </style>
