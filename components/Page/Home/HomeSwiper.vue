@@ -1,5 +1,5 @@
 <template>
-  <div class="py-6 border-b border-black container">
+  <div class="py-6 container">
     <div class="text-5xl font-serif font-medium">{{ title }}</div>
     <div class="relative">
       <PSwiper :slides="slides" :options="options">

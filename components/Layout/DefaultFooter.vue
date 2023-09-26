@@ -6,13 +6,13 @@
           <img :src="image" class="w-auto h-7" />
         </a>
       </div>
-      <div class="text-xs">Copyright 2023 Kinuta Font Factory. All Rights Reserved.</div>
+      <div class="text-xs">Copyright Charrles Tsai All Rights Reserved.</div>
     </div>
   </header>
 </template>
 
 <script lang="ts" setup>
-import instagram from '~/assets/images/instagram.svg'
+import email from '~/assets/images/email.png'
 import github from '~/assets/images/github.svg'
 import medium from '~/assets/images/medium.svg'
 
@@ -20,11 +20,11 @@ import medium from '~/assets/images/medium.svg'
 const links = [
   {
     image: github,
-    link: ''
+    link: 'https://github.com/powerfultraveling'
   },
   {
-    image: instagram,
-    link: ''
+    image: email,
+    link: 'gastbyylion@gmail.com'
   },
   {
     image: medium,
@@ -35,6 +35,6 @@ const links = [
 
 <style scoped>
 .footer-wrapper {
-  @apply space-y-3 md:space-y-0 md:flex md:justify-between md:items-end;
+  @apply space-y-3 border-t border-black md:space-y-0 md:flex md:justify-between md:items-end;
 }
 </style>
