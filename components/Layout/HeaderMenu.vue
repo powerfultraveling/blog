@@ -17,7 +17,7 @@
 const links = [
   {
     label: '關於我',
-    to: '/'
+    to: '/about'
   },
   {
     label: '作品集',
