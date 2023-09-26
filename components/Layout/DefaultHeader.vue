@@ -16,6 +16,14 @@
 
 <script lang="ts" setup>
 const menuOpened = ref(false)
+
+const router = useRouter()
+
+router.beforeEach((_, __, next) => {
+  menuOpened.value = false
+
+  next()
+})
 </script>
 
 <style scoped>
@@ -24,10 +32,10 @@ const menuOpened = ref(false)
 }
 
 .menu {
-  @apply absolute opacity-0 z-20 h-0;
+  @apply absolute opacity-0 z-30 h-0;
 
   &.opened {
-    @apply opacity-90 h-screen lg:h-0 lg:opacity-0;
+    @apply opacity-90 h-screen;
   }
 }
 </style>
