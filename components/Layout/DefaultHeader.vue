@@ -2,8 +2,9 @@
   <header class="w-full bg-primary relative">
     <div class="header-wrapper container">
       <div class="text-[30px] font-serif font-bold">蔡藝屋</div>
-      <HeaderButtons class="hidden lg:flex" />
-      <Hamburger class="block lg:hidden" :active="menuOpened" @change="menuOpened = !menuOpened" />
+      <!-- TODO: could recover it if needed -->
+      <!-- <HeaderButtons class="hidden lg:flex" /> -->
+      <Hamburger class="block" :active="menuOpened" @change="menuOpened = !menuOpened" />
     </div>
     <div class="container flex justify-center">
       <HeaderMenu class="menu flex" :class="{ opened: menuOpened }" />
