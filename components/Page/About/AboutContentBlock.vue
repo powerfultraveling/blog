@@ -44,7 +44,7 @@ defineProps<Props>()
   }
 
   .dot {
-    @apply rounded-full border border-black w-3 h-3 flex items-center justify-center;
+    @apply rounded-full border border-black w-3 h-3 flex items-center justify-center shrink-0;
 
     > div {
       @apply rounded-full bg-black w-2 h-2;
