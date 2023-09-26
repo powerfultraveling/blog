@@ -28,7 +28,7 @@ const links = [
 
 <style scoped>
 a {
-  @apply block relative overflow-hidden pl-5 font-serif text-xl;
+  @apply block relative overflow-hidden pl-5 font-serif text-xl lg:text-3xl;
 
   .dot {
     @apply rounded-full border border-black w-3 h-3 flex items-center justify-center;

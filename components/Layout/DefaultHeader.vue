@@ -35,7 +35,7 @@ router.beforeEach((_, __, next) => {
   @apply absolute opacity-0 z-30 h-0;
 
   &.opened {
-    @apply opacity-90 h-screen;
+    @apply opacity-[96%] h-screen;
   }
 }
 </style>
