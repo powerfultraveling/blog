@@ -35,6 +35,6 @@ const links = [
 
 <style scoped>
 .footer-wrapper {
-  @apply space-y-3 md:space-y-0 md:flex md:justify-between md:items-end;
+  @apply space-y-3 border-t border-black md:space-y-0 md:flex md:justify-between md:items-end;
 }
 </style>
