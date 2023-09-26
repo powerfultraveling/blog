@@ -1,7 +1,9 @@
 <template>
   <header class="w-full bg-primary relative">
     <div class="header-wrapper container">
-      <div class="text-[30px] font-serif font-bold">蔡藝屋</div>
+      <NuxtLink to="/">
+        <div class="text-[30px] font-serif font-bold">蔡藝屋</div>
+      </NuxtLink>
       <!-- TODO: could recover it if needed -->
       <!-- <HeaderButtons class="hidden lg:flex" /> -->
       <Hamburger class="block" :active="menuOpened" @change="menuOpened = !menuOpened" />
