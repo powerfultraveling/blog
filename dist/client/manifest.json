@@ -1,0 +1,136 @@
+{
+  "_nuxt-link.17a2a862.js": {
+    "file": "assets/nuxt-link.17a2a862.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "assets/images/github.svg": {
+    "file": "assets/github.99272bd8.svg",
+    "src": "assets/images/github.svg"
+  },
+  "assets/images/medium.svg": {
+    "file": "assets/medium.9de3fe76.svg",
+    "src": "assets/images/medium.svg"
+  },
+  "assets/images/profile.jpeg": {
+    "file": "assets/profile.48cd14b5.jpeg",
+    "src": "assets/images/profile.jpeg"
+  },
+  "assets/images/projects/flyingV.png": {
+    "file": "assets/flyingV.e57cfc01.png",
+    "src": "assets/images/projects/flyingV.png"
+  },
+  "assets/images/projects/kita.png": {
+    "file": "assets/kita.e2da0325.png",
+    "src": "assets/images/projects/kita.png"
+  },
+  "assets/images/projects/poya.png": {
+    "file": "assets/poya.02327ecb.png",
+    "src": "assets/images/projects/poya.png"
+  },
+  "assets/images/projects/thw.png": {
+    "file": "assets/thw.d1811c42.png",
+    "src": "assets/images/projects/thw.png"
+  },
+  "layouts/default.css": {
+    "file": "assets/default.d9b1a41c.css",
+    "src": "layouts/default.css"
+  },
+  "layouts/default.vue": {
+    "assets": [
+      "assets/github.99272bd8.svg",
+      "assets/medium.9de3fe76.svg"
+    ],
+    "css": [
+      "assets/default.d9b1a41c.css"
+    ],
+    "file": "assets/default.dd319fc2.js",
+    "imports": [
+      "_nuxt-link.17a2a862.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "layouts/default.vue"
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-404.css": {
+    "file": "assets/error-404.95c28eb4.css",
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.css"
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue": {
+    "css": [
+      "assets/error-404.95c28eb4.css"
+    ],
+    "file": "assets/error-404.54e94258.js",
+    "imports": [
+      "_nuxt-link.17a2a862.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue"
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-500.css": {
+    "file": "assets/error-500.e798523c.css",
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.css"
+  },
+  "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue": {
+    "css": [
+      "assets/error-500.e798523c.css"
+    ],
+    "file": "assets/error-500.9a2561b4.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
+  },
+  "node_modules/nuxt/dist/app/entry.js": {
+    "dynamicImports": [
+      "pages/about.vue",
+      "pages/index.vue",
+      "layouts/default.vue",
+      "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
+      "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
+    ],
+    "file": "assets/entry.3e680cab.js",
+    "isEntry": true,
+    "src": "node_modules/nuxt/dist/app/entry.js"
+  },
+  "pages/about.css": {
+    "file": "assets/about.66c2deed.css",
+    "src": "pages/about.css"
+  },
+  "pages/about.vue": {
+    "css": [
+      "assets/about.66c2deed.css"
+    ],
+    "file": "assets/about.c4ad8967.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "pages/about.vue"
+  },
+  "pages/index.css": {
+    "file": "assets/index.0eef94ee.css",
+    "src": "pages/index.css"
+  },
+  "pages/index.vue": {
+    "assets": [
+      "assets/profile.48cd14b5.jpeg",
+      "assets/poya.02327ecb.png",
+      "assets/thw.d1811c42.png",
+      "assets/flyingV.e57cfc01.png",
+      "assets/kita.e2da0325.png"
+    ],
+    "css": [
+      "assets/index.0eef94ee.css"
+    ],
+    "file": "assets/index.d3a2cbe7.js",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "pages/index.vue"
+  }
+}
