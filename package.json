@@ -6,6 +6,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "deploy": "gh-pages -d dist",
     "postinstall": "nuxt prepare",
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .prettierignore"
   },
@@ -20,6 +21,7 @@
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^9.17.0",
+    "gh-pages": "^6.0.0",
     "nuxt": "^3.7.0",
     "postcss": "^8.4.29",
     "postcss-custom-properties": "^13.3.0",

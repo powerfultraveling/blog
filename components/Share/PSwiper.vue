@@ -32,7 +32,7 @@ import { SwiperOptions, Swiper as SwiperClass } from 'swiper/types'
 import 'swiper/css'
 
 interface Props {
-  slides: []
+  slides: any[]
   options: SwiperOptions
 }
 
