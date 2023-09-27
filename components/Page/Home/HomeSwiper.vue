@@ -112,34 +112,19 @@ const options = computed(() => ({
 .control {
   @apply top-half -translate-y-half hoverable z-10 overflow-x-hidden relative md:absolute;
 
+  &:hover {
+    .caret,
+    .caret-stroke {
+      @apply bg-gray;
+    }
+  }
+
   .caret {
-    @apply h-3 bg-black w-px -rotate-45 origin-bottom md:h-6;
+    @apply h-3 bg-black w-px -rotate-45 origin-bottom transitable md:h-6;
   }
 
   .caret-stroke {
-    @apply w-10 bg-black h-px relative md:w-30 lg:w-40 xl:w-50;
-  }
-
-  &::after {
-    content: '上一張 ^_^';
-
-    @apply text-transparent absolute right-0 bottom-0;
-  }
-
-  &:hover::after {
-    animation: train 3s linear infinite;
-
-    @apply text-black;
-  }
-}
-
-@keyframes train {
-  0% {
-    transform: translateX(20%);
-  }
-
-  100% {
-    transform: translateX(-400%);
+    @apply w-10 bg-black h-px relative md:w-30 transitable lg:w-40 xl:w-50;
   }
 }
 
