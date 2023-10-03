@@ -7,7 +7,27 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/stylelint-module'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/stylelint-module', '@nuxtjs/i18n'],
+
+  i18n: {
+    langDir: 'locales',
+    strategy: 'prefix_except_default',
+    locales: [
+      {
+        code: 'en',
+        iso: 'en',
+        name: 'english',
+        file: 'en.json'
+      },
+      {
+        code: 'zh',
+        iso: 'zh-TW',
+        name: 'chinese',
+        file: 'zh.json'
+      }
+    ],
+    vueI18n: './config/i18n'
+  },
 
   components: {
     dirs: [
