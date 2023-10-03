@@ -16,13 +16,13 @@ export default defineNuxtConfig({
       {
         code: 'en',
         iso: 'en',
-        name: 'english',
+        name: 'En',
         file: 'en.json'
       },
       {
         code: 'zh',
         iso: 'zh-TW',
-        name: 'chinese',
+        name: '中',
         file: 'zh.json'
       }
     ],

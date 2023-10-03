@@ -1,7 +1,7 @@
 <template>
   <div class="bg-primary w-full justify-center transitable">
-    <div class="py-10 space-y-4">
-      <NuxtLink v-for="({ label, to }, index) in links" :key="index" :to="to">
+    <div class="py-10 space-y-4 flex flex-col items-center">
+      <NuxtLink v-for="({ label, to }, index) in links" :key="index" :to="to" class="menu-item">
         <div class="dot">
           <div class="rounded-full bg-black w-2 h-2" />
         </div>
@@ -9,6 +9,19 @@
           {{ label }}
         </div>
       </NuxtLink>
+      <div class="flex items-center space-x-4 pl-5 font-serif text-gray-dark">
+        <div
+          v-for="{ code, name } in locales"
+          :key="code"
+          class="hoverable"
+          :class="{ 'text-black': code === locale }"
+          @click="setLocale(code)"
+        >
+          <div>
+            {{ name }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -24,10 +37,12 @@ const links = [
     to: '/'
   }
 ]
+
+const { locale, locales, setLocale } = useI18n()
 </script>
 
 <style scoped>
-a {
+.menu-item {
   @apply block relative overflow-hidden pl-5 font-serif text-xl lg:text-3xl;
 
   .dot {
