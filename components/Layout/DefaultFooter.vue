@@ -2,7 +2,7 @@
   <header class="w-full bg-primary">
     <div class="footer-wrapper container py-5 md:pt-15 pb-5">
       <div class="flex items-center space-x-5">
-        <a v-for="({ image, link }, i) in links" :key="i" :href="link">
+        <a v-for="({ image, link }, i) in links" :key="i" :href="link" target="_blank">
           <img :src="image" class="w-auto h-7" />
         </a>
       </div>
@@ -16,7 +16,6 @@ import email from '~/assets/images/email.png'
 import github from '~/assets/images/github.svg'
 import medium from '~/assets/images/medium.svg'
 
-// TODO: links have to be added
 const links = [
   {
     image: github,
@@ -24,11 +23,11 @@ const links = [
   },
   {
     image: email,
-    link: 'gastbyylion@gmail.com'
+    link: 'mailto:gastbyylion@gmail.com'
   },
   {
     image: medium,
-    link: ''
+    link: 'https://medium.com/@gastbyylion'
   }
 ]
 </script>
