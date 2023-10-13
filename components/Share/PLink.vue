@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="to">
+  <NuxtLink :to="localePath">
     <slot />
   </NuxtLink>
 </template>
@@ -9,5 +9,9 @@ interface Props {
   to: string
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+
+const { $localePath } = useNuxtApp()
+
+const localePath = computed(() => $localePath(props.to))
 </script>
