@@ -1,14 +1,14 @@
 <template>
   <div class="bg-primary w-full justify-center transitable">
     <div class="py-10 space-y-4 flex flex-col items-center">
-      <NuxtLink v-for="({ label, to }, index) in links" :key="index" :to="to" class="menu-item">
+      <PLink v-for="({ label, to }, index) in links" :key="index" :to="to" class="menu-item">
         <div class="dot">
           <div class="rounded-full bg-black w-2 h-2" />
         </div>
         <div>
           {{ label }}
         </div>
-      </NuxtLink>
+      </PLink>
       <div class="flex items-center space-x-4 pl-5 font-serif text-gray-dark">
         <div
           v-for="{ code, name } in locales"

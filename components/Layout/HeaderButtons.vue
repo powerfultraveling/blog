@@ -1,8 +1,8 @@
 <template>
   <div class="flex items-center space-x-2">
-    <NuxtLink v-for="{ to, label } in links" :key="label" :to="to" class="font-serif">
+    <PLink v-for="{ to, label } in links" :key="label" :to="to" class="font-serif">
       {{ label }}
-    </NuxtLink>
+    </PLink>
   </div>
 </template>
 
