@@ -9,7 +9,7 @@
           {{ label }}
         </div>
       </PLink>
-      <div class="flex items-center space-x-4 pl-5 font-serif text-gray-dark">
+      <!-- <div class="flex items-center space-x-4 pl-5 font-serif text-gray-dark">
         <div
           v-for="{ code, name } in locales"
           :key="code"
@@ -21,7 +21,7 @@
             {{ name }}
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -38,7 +38,7 @@ const links = [
   }
 ]
 
-const { locale, locales, setLocale } = useI18n()
+// const { locale, locales, setLocale } = useI18n()
 </script>
 
 <style scoped>
