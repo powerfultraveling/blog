@@ -2,7 +2,7 @@
   <header class="w-full bg-primary">
     <div class="footer-wrapper container py-5 md:pt-15 pb-5">
       <div class="flex items-center space-x-5">
-        <a v-for="({ image, link }, i) in links" :key="i" :href="link">
+        <a v-for="({ image, link }, i) in links" :key="i" :href="link" target="_blank">
           <img :src="image" class="w-auto h-7" />
         </a>
       </div>
@@ -28,7 +28,7 @@ const links = [
   },
   {
     image: medium,
-    link: ''
+    link: 'https://medium.com/@gastbyylion'
   }
 ]
 </script>
