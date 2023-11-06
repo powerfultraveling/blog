@@ -31,13 +31,15 @@ const links = [
   {
     label: '關於我',
     to: '/about'
-  },
-  {
-    label: '作品集',
-    to: '/'
   }
+  // TODO: 之後需加上
+  // {
+  //   label: '作品集',
+  //   to: '/'
+  // }
 ]
 
+// FIXME: Type 有問題，generate 會出問題
 // const { locale, locales, setLocale } = useI18n()
 </script>
 

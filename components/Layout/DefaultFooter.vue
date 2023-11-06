@@ -16,7 +16,6 @@ import email from '~/assets/images/email.png'
 import github from '~/assets/images/github.svg'
 import medium from '~/assets/images/medium.svg'
 
-// TODO: links have to be added
 const links = [
   {
     image: github,
@@ -24,7 +23,7 @@ const links = [
   },
   {
     image: email,
-    link: 'gastbyylion@gmail.com'
+    link: 'mailto:gastbyylion@gmail.com'
   },
   {
     image: medium,
