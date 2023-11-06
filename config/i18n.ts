@@ -1,7 +1,7 @@
 export default {
   fallbackLocale: 'zh_TW',
   defaultLocale: {
-    code: 'tw',
+    code: 'zh',
     iso: 'zh-TW'
   },
   routesNameSeparator: '___',

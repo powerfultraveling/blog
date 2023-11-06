@@ -1,3 +1,5 @@
+import i18nConfig from './config/i18n'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
@@ -11,6 +13,9 @@ export default defineNuxtConfig({
 
   i18n: {
     langDir: 'locales',
+    strategy: 'prefix_except_default',
+    defaultLocale: i18nConfig.defaultLocale.code,
+    routesNameSeparator: i18nConfig.routesNameSeparator,
     locales: [
       {
         code: 'en',
