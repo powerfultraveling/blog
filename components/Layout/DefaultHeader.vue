@@ -2,7 +2,7 @@
   <header class="w-full bg-primary relative">
     <div class="header-wrapper container">
       <PLink to="/">
-        <div class="text-[30px] font-serif font-bold">蔡藝屋</div>
+        <div class="text-[30px] font-serif font-bold">{{ $t('蔡藝屋') }}</div>
       </PLink>
       <!-- TODO: could recover it if needed -->
       <!-- <HeaderButtons class="hidden lg:flex" /> -->
