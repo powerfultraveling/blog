@@ -27,9 +27,11 @@
 </template>
 
 <script lang="ts" setup>
+const { t } = useI18n()
+
 const links = [
   {
-    label: '關於我',
+    label: t('關於我'),
     to: '/about'
   }
   // TODO: 之後需加上
