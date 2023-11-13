@@ -27,6 +27,7 @@
 </template>
 
 <script lang="ts" setup>
+const { $i18n } = useNuxtApp()
 const { t } = useI18n()
 
 const links = [
@@ -42,7 +43,7 @@ const links = [
 ]
 
 // FIXME: Type 有問題，generate 會出問題
-const { locale, locales, setLocale } = useI18n()
+const { locale, locales, setLocale } = $i18n
 </script>
 
 <style scoped>
