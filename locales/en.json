@@ -4,16 +4,14 @@
     "自我介紹": "More About Me",
     "關於寫程式": "Programming",
     "興趣": "Hobbies",
-    "兩年前端開發經驗":"Two years experience in front-end development",
     "主要使用語言： JavaScript 與 TypeScript": "Languages： JavaScript, TypeScript",
-    "最喜歡的框架是 Vue，喜歡他明瞭的寫法、易上手的特性以及廣泛的社群支援": "Vue is my favorite framework, loves it's clear syntax, friendly features and great community support.",
-    "注重程式碼品質": "注重程式碼品質",
-    "上一份工作是接案公司，所以寫過各式各樣的專案": "My previous job was with a web development agency, so I've worked on a wide variety of projects.",
+    "目前有兩年前端開發經驗，寫過各式各樣的專案，包括電商、後臺系統、測驗系統...等。": "With 2 years of experience in front-end development，I have worked on a variety of projects, including e-commerce platforms, ticket-booking website, and official website, etc.",
+    "最喜歡的技術組合是 Vue + Nuxt + Tailwind CSS，使用起來靈活好維護。": "My favorite tech stack is Vue + Nuxt + Tailwind CSS, which providing a flexible and maintainable development experience.",
+    "最近想要學習的東西：演算法、Vue source code、基礎後端、system design、基礎資安":"Current learning goals：algorithm、Vue source code、fundamental back-end development、system design、Front-End security.",
     "最近想要嘗試自學基礎後端以及研究 system design": "I am currently interesting in learning fundamentals of back-end development and system design.",
     "打籃球，大學可能有 90% 以上的時間在圖書館、籃球場": "I love playing basketball, when I was in college I probably spent 90 percent of time in basketball court.",
     "彈鋼琴，最近在學爵士": "I love playing the piano and currently studying jazz piano.",
-    "聽音樂，做事情時聽音樂效率會暴增":"聽音樂，做事情時聽音樂效率會暴增",
-    "前端工程師，大學讀法律和外文，誤打誤撞之下開始寫程式，目前有兩年前端開發經驗，擅長使用 Vue 及相關技術開發，注重程式碼品質、熱愛分享。寫程式之外，我喜歡爬山、打籃球、彈鋼琴、書店和音樂。": "前端工程師，大學讀法律和外文，誤打誤撞之下開始寫程式，目前有兩年前端開發經驗，擅長使用 Vue 及相關技術開發，注重程式碼品質、熱愛分享。寫程式之外，我喜歡爬山、打籃球、彈鋼琴、書店和音樂。",
+    "前端工程師，大學讀法律和外文，誤打誤撞之下開始寫程式，目前有兩年前端開發經驗，擅長使用 Vue 及相關技術開發，注重程式碼品質、熱愛分享。寫程式之外，我喜歡爬山、打籃球、彈鋼琴、書店和音樂。": "With approximately two years of experience in front-end development, I specialize in using Vue, Nuxt, and related technologies to build web applications. I prioritize code quality and have a deep passion for sharing knowledge to assist others.Apart from programming, I enjoy learning languages, traveling, Jazz music, book store amd basketball, nice to meet you!'. ",
     "黏貼處": "黏貼處",
     "蔡恂藝": "Charles Tsai",
     "旅行，喜歡透過旅行認識不同的生活方式": " I enjoy exploring different lifestyles through travel.",
@@ -26,7 +24,6 @@
     "我負責寶雅官網的前端開發，這是一個規模較大的項目。在這個項目中，最大的挑戰在於一開始的結構設計和工作分配。我們需要確保在專案初期建立共用元件和適當的架構，以確保每位工程師的任務不會互相耦合，確保了專案的高效執行和代碼的可維護性。": "I led the  front-end development of the POYA website, which was a large-scale project. The most significant challenge in this project was the architecture design and task assignment. We needed to design  a proper architecture early in the project to prevent coupling of tasks among engineers. This ensured efficient project execution and code maintainability.",
     "高鐵假期": "THSRC Holiday",
     "在這個專案中，我主要負責修改業務邏輯，尤其是商品內頁，因為業務邏輯相當複雜且相互關聯，因此，如何將代碼重構成容易閱讀且易於修改的架構和語法，確保代碼的維護性和擴展性是最重要的關鍵。":"In this project, my primary job was to modify the business logic. Due to the complexity and interdependencies of the business logic, the most critical aspect of this project was refactoring the code into a structure and syntax that is easy to read and maintain. Ensuring the code's maintainability and scalability.",
-    "最熟悉的技術組合是 Vue + Nuxt + Tailwind CSS": "Tech stack: Vue, Nuxt, Tailwind CSS",
     "注重程式碼品質與架構設計": "Prioritize code quality and architecture design"
 }
 
