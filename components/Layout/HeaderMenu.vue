@@ -15,7 +15,7 @@
           :key="code"
           class="hoverable"
           :class="{ 'text-black': code === locale }"
-          @click="setLocale(code)"
+          @click="setLocaleAndReload(code)"
         >
           <div>
             {{ name }}
@@ -44,6 +44,12 @@ const links = [
 
 // FIXME: Type 有問題，generate 會出問題
 const { locale, locales, setLocale } = $i18n
+
+async function setLocaleAndReload(locale: string) {
+  await setLocale(locale)
+
+  location.reload()
+}
 </script>
 
 <style scoped>
