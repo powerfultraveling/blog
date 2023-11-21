@@ -9,7 +9,7 @@ export default class Modal {
   private router: Router
   private queryString: string
 
-  constructor(router: Router, pinia: Pinia, queryString: string) {
+  constructor(router: Router, pinia: Pinia, queryString = 'modal') {
     this.router = router
     this.pinia = pinia
     this.queryString = queryString
@@ -28,7 +28,9 @@ export default class Modal {
   }
 
   appendQuery(name: string) {
-    this.router.replace({ ...this.$route.query, [this.queryString]: name })
+    const query = { ...this.$route.query, [this.queryString]: name }
+
+    this.router.replace({ query })
   }
 
   removeQuery() {
@@ -36,7 +38,7 @@ export default class Modal {
       return
     }
 
-    const query = _.omit(this.$route, this.queryString)
+    const query = _.omit(this.$route.query, this.queryString)
 
     this.router.replace({ query })
   }
