@@ -2,6 +2,7 @@ import type { Pinia } from 'pinia'
 import type { Router } from 'vue-router'
 
 import _ from 'lodash'
+import { useModalStore } from '~/store/modal'
 
 // TODO: have to complete the logic in the future
 export default class Modal {
@@ -27,6 +28,11 @@ export default class Modal {
     return this.router.currentRoute.value
   }
 
+  // TODO: check why did i have to do this?
+  get $store() {
+    return useModalStore(this.pinia)
+  }
+
   appendQuery(name: string) {
     const query = { ...this.$route.query, [this.queryString]: name }
 
@@ -41,5 +47,18 @@ export default class Modal {
     const query = _.omit(this.$route.query, this.queryString)
 
     this.router.replace({ query })
+  }
+
+  // FIXME:  這邊 type 是不是可在優化
+  syncStore() {
+    const modal = this.$route.query.modal
+
+    const INITIAL_OPENED_LIST: [] = []
+
+    if (!modal) {
+      this.$store.setOpenedList(INITIAL_OPENED_LIST)
+    }
+
+    this.$store.setOpenedList([modal as string])
   }
 }

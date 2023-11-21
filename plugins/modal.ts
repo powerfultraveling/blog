@@ -7,6 +7,10 @@ export default defineNuxtPlugin(() => {
 
   const modal = new Modal(router, pinia)
 
+  router.afterEach(() => {
+    modal.syncStore()
+  })
+
   return {
     provide: { modal }
   }
