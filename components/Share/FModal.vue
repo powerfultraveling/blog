@@ -3,7 +3,7 @@
     <div v-if="isOpened" class="cover">
       <div>
         <div class="modal-content">
-          <div class="absolute right-2" @click="close">
+          <div class="absolute right-2" @click="$modal.close()">
             <slot name="close">
               <button>close</button>
             </slot>
@@ -16,17 +16,20 @@
 </template>
 
 <script lang="ts" setup>
+import { storeToRefs } from 'pinia'
+import { useModalStore } from '~/store/modal'
+
 interface Props {
-  isOpened: boolean
+  name: string
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
-const emits = defineEmits(['close'])
+const { openedList } = storeToRefs(useModalStore())
 
-function close() {
-  emits('close')
-}
+const isOpened = computed(() => {
+  return openedList.value.includes(props.name)
+})
 </script>
 
 <style scoped>
