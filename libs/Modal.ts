@@ -1,6 +1,8 @@
 import type { Pinia } from 'pinia'
 import type { Router } from 'vue-router'
 
+import _ from 'lodash'
+
 // TODO: have to complete the logic in the future
 export default class Modal {
   private pinia: Pinia
@@ -17,17 +19,25 @@ export default class Modal {
     this.appendQuery(name)
   }
 
-  // close(){
-
-  // }
+  close() {
+    this.removeQuery()
+  }
 
   get $route() {
-    return this.router.currentRoute
+    return this.router.currentRoute.value
   }
 
   appendQuery(name: string) {
-    this.router.replace({ ...this.$route.value.query, [this.queryString]: name })
+    this.router.replace({ ...this.$route.query, [this.queryString]: name })
   }
 
-  //   removeQuery(name) {}
+  removeQuery() {
+    if (!_.has(this.$route.query, this.queryString)) {
+      return
+    }
+
+    const query = _.omit(this.$route, this.queryString)
+
+    this.router.replace({ query })
+  }
 }
