@@ -1,4 +1,5 @@
 <template>
+  <!-- TODO: 這邊是測試用，之後要修掉 -->
   <div class="container">
     <button class="btn" @click="isOpened = true">click to open</button>
     <button @click="$modal.open('hallo')">modal test</button>
