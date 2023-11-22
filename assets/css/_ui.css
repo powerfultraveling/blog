@@ -1,0 +1,12 @@
+.underline-word {
+    @apply relative;
+  
+    &::after {
+      content: '';
+      @apply bg-black w-0 h-px absolute -bottom-1 left-0 transitable;
+    }
+  
+    &:hover::after {
+      @apply w-full;
+    }
+}
