@@ -9,6 +9,18 @@ const challenges = [
   {
     title: 'Buttons',
     to: '/challenges/buttons'
+  },
+  {
+    title: 'Modal',
+    to: '/challenges/modal'
   }
 ]
 </script>
+
+<style scoped>
+.challenge-item {
+  &:nth-child(odd) {
+    @apply bg-white;
+  }
+}
+</style>
