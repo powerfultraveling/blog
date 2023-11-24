@@ -4,7 +4,7 @@
       <div class="title">{{ title }}</div>
     </div>
     <div class="col-span-9 pt-6">
-      <slot name="right"></slot>
+      <slot name="right" />
     </div>
   </div>
 </template>
@@ -23,6 +23,6 @@ defineProps<Props>()
 }
 
 .title {
-  @apply text-6xl;
+  @apply text-[3.125rem];
 }
 </style>
