@@ -1,1 +1,0 @@
-import{_ as c}from"./nuxt-link.4b7e043a.js";import{f as p,x as r,o as _,A as u,w as l,y as m,z as f,C as i}from"./entry.be10bc6f.js";const k=p({__name:"PLink",props:{to:{}},setup(o){const t=o,{$localePath:e}=i(),n=r(()=>e(t.to));return(s,x)=>{const a=c;return _(),u(a,{to:f(n)},{default:l(()=>[m(s.$slots,"default")]),_:3},8,["to"])}}});export{k as _};
