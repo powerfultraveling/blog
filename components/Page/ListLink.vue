@@ -1,6 +1,6 @@
 <template>
   <div class="list-link">
-    <a v-if="isExternal" :href="to">
+    <a v-if="isExternal" :href="to" target="_blank">
       <ListLinkItem :title="title" />
     </a>
     <PLink v-else :to="to">
