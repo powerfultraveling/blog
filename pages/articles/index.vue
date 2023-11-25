@@ -2,8 +2,13 @@
   <div>
     <ChallengePageTitle title="文章列表" />
     <div class="container">
-      <LinkListItem v-for="{ title, link } in articleList" :key="link" :title="title" :to="link" />
-      <!-- {{ articleList }} -->
+      <ListLink
+        v-for="{ title, link } in articleList"
+        :key="link"
+        :title="title"
+        :to="link"
+        is-external
+      />
     </div>
   </div>
 </template>
@@ -13,7 +18,7 @@ import { articleList } from '~/libs/article/articleList'
 </script>
 
 <style scoped>
-.link-list-item {
+.list-link {
   &:nth-child(odd) {
     @apply bg-white;
   }
