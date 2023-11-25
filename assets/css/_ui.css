@@ -10,3 +10,8 @@
       @apply w-full;
     }
 }
+
+
+.basic-btn {
+  @apply rounded-none;
+}
