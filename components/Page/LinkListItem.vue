@@ -1,6 +1,6 @@
 <template>
   <div class="link-list-item">
-    <PLink :to="to" class="text-2xl flex justify-between space-x-4 xl:text-5xl">
+    <PLink :to="to" class="text-2xl flex justify-between items-center space-x-4 xl:text-5xl">
       <div class="underline-word">
         {{ title }}
       </div>
