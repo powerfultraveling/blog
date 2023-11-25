@@ -30,10 +30,19 @@
 const { $i18n } = useNuxtApp()
 const { t } = useI18n()
 
-const links = [
+interface NavItem {
+  label: string
+  to: string
+}
+
+const links: NavItem[] = [
   {
     label: t('關於我'),
     to: '/about'
+  },
+  {
+    label: t('文章列表'),
+    to: '/articles'
   }
   // TODO: 之後需加上
   // {
