@@ -24,6 +24,7 @@
     "我負責寶雅官網的前端開發，這是一個規模較大的項目。在這個項目中，最大的挑戰在於一開始的結構設計和工作分配。我們需要確保在專案初期建立共用元件和適當的架構，以確保每位工程師的任務不會互相耦合，確保了專案的高效執行和代碼的可維護性。": "I led the  front-end development of the POYA website, which was a large-scale project. The most significant challenge in this project was the architecture design and task assignment. We needed to design  a proper architecture early in the project to prevent coupling of tasks among engineers. This ensured efficient project execution and code maintainability.",
     "高鐵假期": "THSRC Holiday",
     "在這個專案中，我主要負責修改業務邏輯，尤其是商品內頁，因為業務邏輯相當複雜且相互關聯，因此，如何將代碼重構成容易閱讀且易於修改的架構和語法，確保代碼的維護性和擴展性是最重要的關鍵。":"In this project, my primary job was to modify the business logic. Due to the complexity and interdependencies of the business logic, the most critical aspect of this project was refactoring the code into a structure and syntax that is easy to read and maintain. Ensuring the code's maintainability and scalability.",
-    "注重程式碼品質與架構設計": "Prioritize code quality and architecture design"
+    "注重程式碼品質與架構設計": "Prioritize code quality and architecture design",
+    "文章列表":"Articles"
 }
 
