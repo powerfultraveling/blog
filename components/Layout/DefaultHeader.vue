@@ -2,7 +2,7 @@
   <header class="w-full bg-primary relative">
     <div class="header-wrapper container">
       <PLink to="/" class="flex flex-col items-center">
-        <img src="~/assets/images/logo/logo-words.svg" class="w-20" />
+        <img src="~/assets/images/logo/logo-word.svg" class="w-20" />
         <!-- <div class="text-[25px] font-bold">{{ $t('文書屋') }}</div> -->
       </PLink>
       <!-- TODO: could recover it if needed -->
