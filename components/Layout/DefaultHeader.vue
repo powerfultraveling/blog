@@ -1,8 +1,9 @@
 <template>
   <header class="w-full bg-primary relative">
     <div class="header-wrapper container">
-      <PLink to="/">
-        <div class="text-[30px] font-serif font-bold">{{ $t('蔡藝屋') }}</div>
+      <PLink to="/" class="flex flex-col items-center">
+        <img src="~/assets/images/logo/logo-words.svg" class="w-20" />
+        <!-- <div class="text-[25px] font-bold">{{ $t('文書屋') }}</div> -->
       </PLink>
       <!-- TODO: could recover it if needed -->
       <!-- <HeaderButtons class="hidden lg:flex" /> -->
