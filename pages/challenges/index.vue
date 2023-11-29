@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ChallengePageTitle title="Front-End Challenge" />
+    <ChallengePageTitle title="前端挑戰" />
     <ChallengeAbout />
     <ChallengeList />
   </div>
