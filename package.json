@@ -44,6 +44,7 @@
     "lodash": "^4.17.21",
     "pinia": "^2.1.7",
     "swiper": "^10.2.0",
+    "vee-validate": "^4.12.2",
     "vite-svg-loader": "^4.0.0"
   }
 }
