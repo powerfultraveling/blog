@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="mb-1">
+      <SFieldLabel :label="props.label" :required="props.required" />
+    </div>
+    <div class="mb-1">
       <slot />
     </div>
     <div class="text-danger text-xs">{{ errorMessage }}</div>
@@ -14,6 +17,7 @@ interface Props {
   label: string
   name: string
   message: string
+  required: boolean
 }
 
 const props = defineProps<Props>()
