@@ -23,5 +23,9 @@
     "主要使用語言： JavaScript 與 TypeScript": "主要使用語言： JavaScript 與 TypeScript",
     "注重程式碼品質與架構設計": "注重程式碼品質與架構設計",
     "最近想要學習的東西：演算法、Vue source code、基礎後端、system design、基礎資安":"最近想要學習的東西：演算法、Vue source code、基礎後端、system design、基礎資安",
-    "文章列表":"文章列表"
+    "文章列表":"文章列表",
+    "各式按鈕": "各式按鈕",
+    "基本使用":"基本使用",
+    "這邊是一些我用 Vue 寫的 UI component 用來練習我自己的技巧，順便之後當作一個reference，用來記錄各種功能怎麼實做的。":"這邊是一些我用 Vue 寫的 UI component 用來練習我自己的技巧，順便之後當作一個reference，用來記錄各種功能怎麼實做的。",
+    "使用網址來做開關，並將方法注入到 plugin 裏，用 $modal.open(modalName}) 的方式來打開。":"使用網址來做開關，並將方法注入到 plugin 裏，用 $modal.open(modalName}) 的方式來打開。",
 }

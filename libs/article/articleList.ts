@@ -17,10 +17,6 @@ export const articleList: Article[] = [
     link: 'https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2Fa80b0080bb52&operation=register&redirect=https%3A%2F%2Fgastbyylion.medium.com%2Fjunior-engineer-%25E7%259A%2584%25E5%259B%25B0%25E5%25A2%2583%25E7%25B3%25BB%25E5%2588%2597-%25E6%25B2%2592%25E7%25B6%2593%25E9%25A9%2597%25E8%25A6%2581%25E6%2580%258E%25E9%25BA%25BC%25E9%25A0%2590%25E4%25BC%25B0%25E6%2599%2582%25E9%2596%2593-a80b0080bb52&source=---------2-----------------bookmark_preview-----------'
   },
   {
-    title: '第一次領薪水就該懂得理財方法-書摘',
-    link: 'https://medium.com/m/signin?actionUrl=https%3A%2F%2Fmedium.com%2F_%2Fbookmark%2Fp%2Ff6d0b0394a22&operation=register&redirect=https%3A%2F%2Fgastbyylion.medium.com%2F%25E7%25AC%25AC%25E4%25B8%2580%25E6%25AC%25A1%25E9%25A0%2598%25E8%2596%25AA%25E6%25B0%25B4%25E5%25B0%25B1%25E8%25A9%25B2%25E6%2587%2582%25E5%25BE%2597%25E7%2590%2586%25E8%25B2%25A1%25E6%2596%25B9%25E6%25B3%2595-%25E6%259B%25B8%25E6%2591%2598-f6d0b0394a22&source=---------3-----------------bookmark_preview-----------'
-  },
-  {
     title: '從流程圖了解 Webpack 到底在幹嘛?',
     link: 'https://gastbyylion.medium.com/%E5%BE%9E%E6%B5%81%E7%A8%8B%E5%9C%96%E4%BA%86%E8%A7%A3-webpack-%E5%88%B0%E5%BA%95%E5%9C%A8%E5%B9%B9%E5%98%9B-17fac2d3ebe2?source=user_profile---------4----------------------------'
   },

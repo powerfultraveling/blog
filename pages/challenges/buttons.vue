@@ -1,5 +1,5 @@
 <template>
-  <ChallengeInnerPageWrapper title="各式按鈕">
+  <ChallengeInnerPageWrapper :title="$t('各式按鈕')">
     <template #right>
       <div class="space-y-4">
         <FeatureItemCard :title="buttonInfo[ButtonType.SWITCH].title">
