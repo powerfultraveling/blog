@@ -25,6 +25,11 @@
     "高鐵假期": "THSRC Holiday",
     "在這個專案中，我主要負責修改業務邏輯，尤其是商品內頁，因為業務邏輯相當複雜且相互關聯，因此，如何將代碼重構成容易閱讀且易於修改的架構和語法，確保代碼的維護性和擴展性是最重要的關鍵。":"In this project, my primary job was to modify the business logic. Due to the complexity and interdependencies of the business logic, the most critical aspect of this project was refactoring the code into a structure and syntax that is easy to read and maintain. Ensuring the code's maintainability and scalability.",
     "注重程式碼品質與架構設計": "Prioritize code quality and architecture design",
-    "文章列表":"Articles"
+    "文章列表":"Articles",
+    "各式按鈕": "Buttons",
+    "基本使用":"Basic",
+    "這邊是一些我用 Vue 寫的 UI component 用來練習我自己的技巧，順便之後當作一個reference，用來記錄各種功能怎麼實做的。":"這邊是一些我用 Vue 寫的 UI component 用來練習我自己的技巧，順便之後當作一個reference，用來記錄各種功能怎麼實做的。",
+    "使用網址來做開關，並將方法注入到 plugin 裏，用 $modal.open(modalName}) 的方式來打開。":"使用網址來做開關，並將方法注入到 plugin 裏，用 $modal.open(modalName}) 的方式來打開。",
+    "前端挑戰": "FrontEnd Challenge"
 }
 
