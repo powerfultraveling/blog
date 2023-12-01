@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="!!label" class="mb-1">
+    <div v-if="label" class="mb-1">
       <SFieldLabel :label="label" :required="props.required" />
     </div>
     <div class="mb-1">
