@@ -1,22 +1,34 @@
 <template>
-  <div>
-    <SField :name="name" :label="label" :required="required" :message="message">
-      <input v-bind="bindings" @input="handleInput" />
-    </SField>
-  </div>
+  <SField :name="name" :label="label" :required="required" :message="message">
+    <textarea v-if="isTextarea" @input="handleInput" />
+    <input v-else v-bind="bindings" class="form-control" @input="handleInput" />
+  </SField>
 </template>
 
 <script lang="ts" setup>
 import { useField } from 'vee-validate'
 
 interface Props {
-  label: string
+  label?: string
   name: string
-  message: string
+  type?: string
+  message?: string
   required: boolean
+  rules?: string
 }
 
-const props = defineProps<Props>()
+enum InputType {
+  TEXT = 'text',
+  TEXTAREA = 'textarea',
+  NUMBER = 'number'
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  label: '',
+  type: InputType.TEXT,
+  message: '',
+  rules: ''
+})
 
 const { value: inputValue, handleChange } = useField(props.name)
 
@@ -26,12 +38,26 @@ function handleInput(e: Event) {
   handleChange(value)
 }
 
+const isTextarea = computed(() => {
+  return props.type === InputType.TEXTAREA
+})
+
 const bindings = computed(() => {
-  return {
+  const bindings = {
     value: inputValue.value,
     name: props.name,
     label: props.label,
+    rules: props.rules,
     required: props.required
+  }
+
+  if (isTextarea.value) {
+    return bindings
+  }
+
+  return {
+    ...bindings,
+    type: props.type
   }
 })
 </script>

@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .form-control {
+        @apply transitable;
+        @apply w-full p-3 border border-gray-lighter rounded-md;
+
+        &:focus {
+            @apply border-black
+        }   
+    }
+}
