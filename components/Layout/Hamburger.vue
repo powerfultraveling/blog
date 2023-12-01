@@ -24,7 +24,7 @@ const emits = defineEmits(['change'])
   }
 
   .stick-top {
-    @apply top-1;
+    @apply top-[0.2rem];
   }
 
   .stick-bottom {
