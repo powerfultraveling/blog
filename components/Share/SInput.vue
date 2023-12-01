@@ -1,5 +1,5 @@
 <template>
-  <SField :name="name" :label="label" :required="required" :message="message">
+  <SField :name="name" :label="label" :required="required" :message="message" :rules="rules">
     <textarea v-if="isTextarea" @input="handleInput" />
     <input v-else v-bind="bindings" class="form-control" @input="handleInput" />
   </SField>
@@ -8,13 +8,15 @@
 <script lang="ts" setup>
 import { useField } from 'vee-validate'
 
+import type { Rule } from '~/libs/support/types'
+
 interface Props {
   label?: string
   name: string
   type?: string
   message?: string
-  required: boolean
-  rules?: string
+  required?: boolean
+  rules?: Rule
 }
 
 enum InputType {
@@ -30,7 +32,7 @@ const props = withDefaults(defineProps<Props>(), {
   rules: ''
 })
 
-const { value: inputValue, handleChange } = useField(props.name)
+const { value: inputValue, handleChange } = useField(props.name, { email: true })
 
 function handleInput(e: Event) {
   const value = (e.target as HTMLInputElement).value
