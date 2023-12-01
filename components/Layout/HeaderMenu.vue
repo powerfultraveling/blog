@@ -46,7 +46,7 @@ const links: NavItem[] = [
   },
   {
     label: t('前端挑戰'),
-    to: '/articles'
+    to: '/challenges'
   }
   // TODO: 之後需加上
   // {
