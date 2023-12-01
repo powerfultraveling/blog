@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="mb-1">
-      <SFieldLabel :label="props.label" :required="props.required" />
+    <div v-if="!!label" class="mb-1">
+      <SFieldLabel :label="label" :required="props.required" />
     </div>
     <div class="mb-1">
       <slot />
@@ -14,9 +14,9 @@
 import { useField } from 'vee-validate'
 
 interface Props {
-  label: string
+  label?: string
   name: string
-  message: string
+  message?: string
   required: boolean
 }
 
