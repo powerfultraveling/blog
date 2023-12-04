@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a class="text-2xl mb-4 flex items-center md:text-6xl md:mb-6" href="#title">
+    <a class="text-2xl mb-4 flex items-center md:text-6xl md:mb-6" :href="anchorId">
       <div>#</div>
       <div class="text-5xl">{{ title }}</div>
     </a>
@@ -15,5 +15,7 @@ interface Props {
   content?: string
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
+
+const anchorId = `#${props.title}`
 </script>

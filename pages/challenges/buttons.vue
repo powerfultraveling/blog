@@ -12,6 +12,11 @@
             <CoverButton />
           </div>
         </FeatureItemCard>
+        <FeatureItemCard :title="buttonInfo[ButtonType.BORDER_EXPAND].title">
+          <div>
+            <BorderButton />
+          </div>
+        </FeatureItemCard>
       </div>
     </template>
   </ChallengeInnerPageWrapper>
@@ -20,7 +25,8 @@
 <script lang="ts" setup>
 enum ButtonType {
   SWITCH = 'SWITCH',
-  COVER = 'COVER'
+  COVER = 'COVER',
+  BORDER_EXPAND = 'BORDER_EXPAND'
 }
 
 const buttonInfo = {
@@ -28,7 +34,10 @@ const buttonInfo = {
     title: 'Toggler'
   },
   [ButtonType.COVER]: {
-    title: 'Cover Up'
+    title: 'CoverUp'
+  },
+  [ButtonType.BORDER_EXPAND]: {
+    title: 'BorderExpanded'
   }
 }
 
