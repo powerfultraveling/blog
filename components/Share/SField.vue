@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mb-1">
+    <div class="mb-px">
       <SFieldLabel :label="props.label" :required="props.required" />
     </div>
     <div class="mb-1">
