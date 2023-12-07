@@ -2,7 +2,7 @@
   <div class="w-full flex justify-center container border-b border-black">
     <div class="content-wrapper">
       <div class="profile-picture">
-        <img src="~/assets/images/profile.jpeg" />
+        <img src="~/assets/images/me.jpeg" />
         <div class="profile-cover">{{ $t('黏貼處') }}</div>
       </div>
       <div class="font-serif pl-4 border-l border-black">
