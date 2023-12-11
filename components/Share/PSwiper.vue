@@ -23,6 +23,7 @@
     <slot name="pagination" :slide-to="slideTo" :active="localActive" />
   </div>
 </template>
+
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { EffectFade, Autoplay } from 'swiper/modules'

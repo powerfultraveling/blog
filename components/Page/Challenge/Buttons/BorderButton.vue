@@ -4,8 +4,6 @@
   </button>
 </template>
 
-<script lang="ts" setup></script>
-
 <style scoped>
 .border-btn {
   @apply relative rounded-none;

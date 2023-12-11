@@ -21,8 +21,6 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
-
 <style scoped>
 .content-wrapper {
   @apply relative flex flex-col items-center space-y-5 md:flex-row md:space-x-30 py-10;
