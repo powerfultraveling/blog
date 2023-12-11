@@ -2,7 +2,7 @@
   <div class="container flex justify-center mb-20 lg:mb-30">
     <div class="relative">
       <div class="moving-block" />
-      <div class="title font-serif">{{ $t('自我介紹') }}</div>
+      <div class="title">{{ $t('自我介紹') }}</div>
     </div>
   </div>
 </template>
