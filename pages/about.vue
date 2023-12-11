@@ -1,6 +1,6 @@
 <template>
   <div class="pt-10">
-    <AboutTitle />
+    <PageTitleWithLayout title="自我介紹" />
     <AboutContent />
   </div>
 </template>

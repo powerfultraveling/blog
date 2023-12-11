@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex justify-center mb-10 lg:mb-10">
+  <div class="container flex justify-center">
     <div class="relative">
       <div class="moving-block" />
       <div class="title">{{ $t(title) }}</div>

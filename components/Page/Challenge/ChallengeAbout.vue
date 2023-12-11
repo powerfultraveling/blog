@@ -1,5 +1,5 @@
 <template>
-  <div class="py-4 flex justify-center xl:py-8">
+  <div class="py-4 flex justify-center container xl:py-8">
     <div class="lg:w-100">
       {{
         $t(
