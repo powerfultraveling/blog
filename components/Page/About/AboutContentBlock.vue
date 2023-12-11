@@ -31,7 +31,7 @@ defineProps<Props>()
 
 <style scoped>
 .content-block {
-  @apply font-serif xl:grid xl:grid-cols-12 gap-x-4;
+  @apply xl:grid xl:grid-cols-12 gap-x-4;
 
   .title {
     @apply text-5xl mb-4 xl:mb-0 xl:col-start-1 xl:col-end-3;

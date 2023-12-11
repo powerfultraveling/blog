@@ -9,7 +9,7 @@
           {{ label }}
         </div>
       </PLink>
-      <div class="flex items-center space-x-4 pl-5 font-serif text-gray-dark">
+      <div class="flex items-center space-x-4 pl-5 text-gray-dark">
         <div
           v-for="{ code, name } in locales"
           :key="code"
@@ -67,7 +67,7 @@ async function setLocaleAndReload(locale: string) {
 
 <style scoped>
 .menu-item {
-  @apply block relative overflow-hidden pl-5 font-serif text-xl lg:text-3xl;
+  @apply block relative overflow-hidden pl-5 text-xl lg:text-3xl;
 
   .dot {
     @apply rounded-full border border-black w-3 h-3 flex items-center justify-center;

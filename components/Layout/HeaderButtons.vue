@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center space-x-2">
-    <PLink v-for="{ to, label } in links" :key="label" :to="to" class="font-serif">
+    <PLink v-for="{ to, label } in links" :key="label" :to="to">
       {{ label }}
     </PLink>
   </div>

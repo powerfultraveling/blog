@@ -5,7 +5,7 @@
         <img src="~/assets/images/me.jpeg" />
         <div class="profile-cover">{{ $t('黏貼處') }}</div>
       </div>
-      <div class="font-serif pl-4 border-l border-black">
+      <div class="pl-4 border-l border-black">
         <div class="text-5xl mb-5">
           {{ $t('蔡恂藝') }}
         </div>
@@ -29,7 +29,7 @@
     @apply relative w-50 h-50 border border-black flex justify-center items-center shrink-0 overflow-x-hidden;
 
     .profile-cover {
-      @apply absolute w-full h-full flex items-center justify-center bg-primary transition-all duration-1000 cursor-pointer font-serif;
+      @apply absolute w-full h-full flex items-center justify-center bg-primary transition-all duration-1000 cursor-pointer;
     }
 
     &:hover .profile-cover {

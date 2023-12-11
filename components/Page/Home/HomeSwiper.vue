@@ -1,6 +1,6 @@
 <template>
   <div class="py-6 container">
-    <div class="text-5xl font-serif font-medium">{{ title }}</div>
+    <div class="text-5xl font-medium">{{ title }}</div>
     <div class="relative">
       <PSwiper :slides="slides" :options="options">
         <template #controls="{ slidePrev, slideNext, isEnd, isBeginning }">
@@ -85,7 +85,7 @@ const options = computed(() => ({
   @apply relative border border-white;
 
   .slide-card {
-    @apply bg-white flex flex-col items-center px-6 py-10 font-serif transitable lg:flex-row lg:space-x-6;
+    @apply bg-white flex flex-col items-center px-6 py-10 transitable lg:flex-row lg:space-x-6;
   }
 
   .shadow-block {
