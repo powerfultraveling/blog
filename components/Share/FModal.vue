@@ -2,13 +2,15 @@
   <Transition>
     <div v-if="isOpened" class="cover">
       <div>
-        <div class="modal-content">
-          <div class="absolute right-2" @click="$modal.close()">
+        <div class="modal-content relative">
+          <div class="absolute right-10 top-6" @click="$modal.close()">
             <slot name="close">
-              <button>close</button>
+              <SClose :active="isOpened" />
             </slot>
           </div>
-          <slot />
+          <slot>
+            <div class="w-100 h-50 flex items-center justify-center">This is Modal</div>
+          </slot>
         </div>
       </div>
     </div>
@@ -39,7 +41,7 @@ const isOpened = computed(() => {
 }
 
 .modal-content {
-  @apply w-100 h-50 bg-white rounded-md relative;
+  @apply bg-white rounded-md relative;
 }
 
 .v-enter-active,
