@@ -13,6 +13,10 @@ const challenges = [
   {
     title: 'Modal',
     to: '/challenges/modal'
+  },
+  {
+    title: 'Form',
+    to: '/challenges/form'
   }
 ]
 </script>
