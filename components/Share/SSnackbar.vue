@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div></div>
+  <div class="p-6 rounded-md bg-info text-white">
+    <div>{{ content }}</div>
   </div>
 </template>
 
@@ -11,12 +11,4 @@ interface Props {
 }
 
 defineProps<Props>()
-
-const emits = defineEmits(['change'])
-
-function toggleActive() {
-  emits('change')
-}
 </script>
-
-<style scoped></style>
