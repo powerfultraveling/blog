@@ -1,8 +1,7 @@
 // show, hid, opened
 import { createVNode, render } from 'vue'
 import SSnackbar from '~/components/Share/SSnackbar.vue'
-
-type MessageType = 'success' | 'danger' | 'warn'
+import { MessageType } from '~/libs/support/types'
 
 interface Message {
   content: string
@@ -16,13 +15,12 @@ class Snackbar {
     this.opened = []
   }
 
-  show(message: Message) {
+  show(message: Message = { message: '', type: MessageType.success }) {
     const container = document.createElement('div')
 
     const vnode = createVNode(SSnackbar, {
       ...message,
       onHide: () => {
-        alert('hide')
         document.querySelector('body')?.removeChild(container)
         this.opened.splice(this.opened.indexOf(vm), 1)
       }
@@ -32,6 +30,8 @@ class Snackbar {
     document.querySelector('body')?.appendChild(container)
 
     const vm = vnode.component
+
+    vm.exposed.show()
 
     this.opened = [...this.opened, vm]
 

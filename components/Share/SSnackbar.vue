@@ -1,28 +1,60 @@
 <template>
-  <div class="s-snackbar">
-    <div>{{ content }}</div>
-  </div>
+  <Transition name="slide">
+    <div v-if="isShow" class="s-snackbar" :class="activeMessageClass">
+      <div>{{ content }}</div>
+    </div>
+  </Transition>
 </template>
 
 <script lang="ts" setup>
+import { MessageType } from '~/libs/support/types'
+
 interface Props {
   content: string
-  type: string
+  type: MessageType
 }
 
-defineProps<Props>()
+const messageClassDic = {
+  [MessageType.success]: 'bg-success',
+  [MessageType.danger]: 'bg-danger',
+  [MessageType.warn]: 'bg-info'
+}
+
+const props = defineProps<Props>()
 const emits = defineEmits(['hide'])
 
-function hide() {
-  console.log('hide in component')
-  emits('hide')
+const activeMessageClass = computed(() => messageClassDic[props.type])
+
+const isShow = ref(false)
+
+function show() {
+  isShow.value = true
 }
 
-defineExpose({ hide })
+function hide() {
+  setTimeout(() => {
+    emits('hide')
+  }, 5000)
+
+  isShow.value = false
+}
+
+defineExpose({ hide, show })
 </script>
 
 <style scoped>
 .s-snackbar {
-  @apply fixed top-10 p-6 rounded-md bg-info text-white;
+  @apply fixed left-half top-10 -translate-x-half;
+  @apply p-4 rounded-md bg-info text-white font-medium;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  @apply transitable !important;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  @apply opacity-0 -translate-y-full;
 }
 </style>
