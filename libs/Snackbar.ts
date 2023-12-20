@@ -1,5 +1,5 @@
-// show, hid, opened
 import { createVNode, render } from 'vue'
+import type { ComponentInternalInstance } from 'vue'
 import SSnackbar from '~/components/Share/SSnackbar.vue'
 import { MessageType } from '~/libs/support/types'
 
@@ -9,13 +9,13 @@ interface Message {
 }
 
 class Snackbar {
-  private opened: unknown[] = []
+  private opened: ComponentInternalInstance[] = []
 
   constructor() {
     this.opened = []
   }
 
-  show(message: Message = { message: '', type: MessageType.success }) {
+  show(message: Message = { content: '', type: MessageType.success }) {
     const container = document.createElement('div')
 
     const vnode = createVNode(SSnackbar, {
@@ -29,9 +29,9 @@ class Snackbar {
     render(vnode, container)
     document.querySelector('body')?.appendChild(container)
 
-    const vm = vnode.component
+    const vm = vnode.component!
 
-    vm?.exposed.show()
+    vm?.exposed?.show()
 
     this.opened = [...this.opened, vm]
 
@@ -47,7 +47,7 @@ class Snackbar {
   }
 
   hide() {
-    this.opened.forEach((element) => element.exposed.hide())
+    this.opened.forEach((element) => element.exposed?.hide())
   }
 }
 
