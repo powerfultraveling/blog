@@ -21,10 +21,10 @@ function toggleActive() {
 
 <style scoped>
 .close {
-  @apply cursor-pointer;
+  @apply cursor-pointer relative translate-y-half;
 
   .stick {
-    @apply left-0 w-6 h-[2px] bg-black absolute transitable;
+    @apply left-0 w-4 h-[2px] bg-black absolute transitable;
   }
 
   &:hover .stick {

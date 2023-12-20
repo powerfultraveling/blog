@@ -7,7 +7,13 @@
       @mouseenter="clearHideTimer"
       @mouseleave="setHideTimer"
     >
-      <div>{{ content }}</div>
+      <div class="mr-2">{{ content }}</div>
+      <button class="relative inline-block" @click.prevent="hide">
+        <!-- FIXME: The icon could not be loaded when using render function"
+        <SIcon name="close-outline" /> -->
+        <!-- <div>dsds</div> -->
+        <SClose :active="isShow" />
+      </button>
     </div>
   </Transition>
 </template>
@@ -26,7 +32,7 @@ const messageClassDic = {
   [MessageType.warn]: 'bg-info'
 }
 
-const SHOWING_TIMEAMOUNT = 5000
+const SHOWING_TIME_AMOUNT = 5000
 
 const props = defineProps<Props>()
 const emits = defineEmits(['hide'])
@@ -37,7 +43,7 @@ const isShow = ref(false)
 const timer = ref<ReturnType<typeof setTimeout> | null>(null)
 
 function setHideTimer() {
-  timer.value = window.setTimeout(hide, SHOWING_TIMEAMOUNT)
+  timer.value = window.setTimeout(hide, SHOWING_TIME_AMOUNT)
 }
 
 function clearHideTimer() {
@@ -64,8 +70,28 @@ defineExpose({ hide, show })
 <style scoped>
 .s-snackbar {
   @apply fixed left-half top-10 -translate-x-half;
-  @apply p-4 rounded-md bg-info text-white font-medium;
+  @apply px-6 py-4 rounded-md bg-info text-white font-medium;
+  @apply flex items-center space-x-2;
 }
+
+:deep(.close) {
+  .stick {
+    @apply w-3 bg-white !important;
+  }
+
+  &:hover .stick {
+    @apply bg-gray !important;
+  }
+}
+
+/* 
+:deep(.stick) {
+  @apply w-3 h-px bg-white !important;
+
+  &:hover {
+    @apply bg-gray !important;
+  }
+} */
 
 .slide-enter-active,
 .slide-leave-active {
