@@ -19,6 +19,7 @@
 </template>
 
 <script lang="ts" setup>
+import type { Ref } from 'vue'
 import { MessageType } from '~/libs/support/types'
 
 interface Props {
@@ -40,8 +41,9 @@ const emits = defineEmits(['hide'])
 const activeMessageClass = computed(() => messageClassDic[props.type])
 
 const isShow = ref(false)
-const timer = ref<ReturnType<typeof setTimeout> | null>(null)
+const timer: Ref<number | undefined> = ref(undefined)
 
+// FIXME: The type of the setTimeout is not correct when run yarn dev
 function setHideTimer() {
   timer.value = window.setTimeout(hide, SHOWING_TIME_AMOUNT)
 }
