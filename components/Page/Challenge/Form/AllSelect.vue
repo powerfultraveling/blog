@@ -3,7 +3,7 @@
     <div class="pb-4 border-b border-black px-4">
       <SCheckbox
         :value="isAllSelected"
-        :checked="isAllSelected"
+        :selected="isAllSelected"
         label="全選"
         @change="handleAllSelect"
       />
@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts" setup>
-const isAllSelected = ref()
+const isAllSelected = ref(false)
 const selected = ref<string[]>([])
 
 const items = [
