@@ -2,8 +2,8 @@
   <ChallengeInnerPageWrapper :title="$t('彈窗元件')">
     <template #right>
       <FeatureItemCard
-        :title="modalInfo[ModalType.BASIC].title"
-        :content="modalInfo[ModalType.BASIC].content"
+        :title="modalInfo[Form.ALL_SELECT].title"
+        :content="modalInfo[Form.ALL_SELECT].content"
       >
         <div>
           <AllSelect />
@@ -16,16 +16,14 @@
 <script lang="ts" setup>
 const { t } = useI18n()
 
-enum ModalType {
-  BASIC = 'BAISC'
+enum Form {
+  ALL_SELECT = 'ALL_SELECT'
 }
 
 const modalInfo = {
-  [ModalType.BASIC]: {
-    title: t('基本使用'),
-    content: t(
-      '使用網址來做開關，並將方法注入到 plugin 裏，用 $modal.open(modalName}) 的方式來打開。'
-    )
+  [Form.ALL_SELECT]: {
+    title: t('全選功能'),
+    content: ''
   }
 }
 </script>
