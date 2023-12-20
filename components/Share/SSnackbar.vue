@@ -84,15 +84,6 @@ defineExpose({ hide, show })
   }
 }
 
-/* 
-:deep(.stick) {
-  @apply w-3 h-px bg-white !important;
-
-  &:hover {
-    @apply bg-gray !important;
-  }
-} */
-
 .slide-enter-active,
 .slide-leave-active {
   @apply transitable !important;
