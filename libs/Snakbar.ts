@@ -31,16 +31,20 @@ class Snackbar {
 
     const vm = vnode.component
 
-    vm.exposed.show()
+    vm?.exposed.show()
 
     this.opened = [...this.opened, vm]
 
     return vm
   }
 
-  danger() {}
+  danger(content: string) {
+    this.show({ content, type: MessageType.danger })
+  }
 
-  success() {}
+  success(content: string) {
+    this.show({ content, type: MessageType.success })
+  }
 
   hide() {
     this.opened.forEach((element) => element.exposed.hide())
