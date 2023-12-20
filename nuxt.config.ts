@@ -9,7 +9,13 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/stylelint-module', '@nuxtjs/i18n', '@pinia/nuxt'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/stylelint-module',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
+    'nuxt-icon'
+  ],
 
   i18n: {
     langDir: 'locales',
