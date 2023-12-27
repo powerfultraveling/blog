@@ -6,7 +6,7 @@
           <img :src="image" class="w-auto h-7" />
         </a>
       </div>
-      <div class="text-xs">Copyright Charrles Tsai All Rights Reserved.</div>
+      <div class="text-xs">Copyright Charles Tsai All Rights Reserved.</div>
     </div>
   </header>
 </template>
