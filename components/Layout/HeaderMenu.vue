@@ -5,7 +5,7 @@
         <div class="dot">
           <div class="rounded-full bg-black w-2 h-2" />
         </div>
-        <div>
+        <div class="menu-label" data-test="menu-label">
           {{ label }}
         </div>
       </PLink>
