@@ -28,7 +28,7 @@
 
 <script lang="ts" setup>
 const { $i18n } = useNuxtApp()
-const { t } = useI18n()
+const { locale, locales, setLocale, t } = $i18n
 
 interface NavItem {
   label: string
@@ -54,9 +54,6 @@ const links: NavItem[] = [
   //   to: '/'
   // }
 ]
-
-// FIXME: Type 有問題，generate 會出問題
-const { locale, locales, setLocale } = $i18n
 
 async function setLocaleAndReload(locale: string) {
   await setLocale(locale)
