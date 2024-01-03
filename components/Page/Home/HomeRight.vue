@@ -1,4 +1,3 @@
 <template>
-    <div>right</div>
+  <div>right</div>
 </template>
-  

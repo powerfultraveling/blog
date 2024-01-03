@@ -1,13 +1,12 @@
 import path from 'path'
-import { defineConfig } from 'vitest/config'
-import Vue from '@vitejs/plugin-vue'
+import { defineVitestConfig } from '@nuxt/test-utils/config'
 
-export default defineConfig({
-  plugins: [Vue()],
+export default defineVitestConfig({
   test: {
-    // could access the methods of vitest without import
+    // EXPLAIN: could access the methods of vitest without import
     globals: true,
-    environment: 'happy-dom'
+    // EXPLAIN: Using Nuxt could make vitest recognize composables from Nuxt
+    environment: 'nuxt'
   },
   // enable Test file to import module by using absolute path
   resolve: {
