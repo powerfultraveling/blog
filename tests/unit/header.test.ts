@@ -7,11 +7,11 @@ describe('header', () => {
   test('header is exist', () => {
     expect(component).toBeDefined()
   })
-  test('check header menu label', async () => {
+  test('checkAreHeaderMenuItemsCorrect', async () => {
     const wrapper = await mountSuspended(component)
 
     for (let i = 0; i < MENU_LABELS.length; i++) {
-      const text = wrapper.findAll('div[data-test="menu-label"]"').at(i).text()
+      const text = wrapper.findAll('div[data-test="menu-label"]"')?.at(i)?.text()
 
       expect(text).toBe(MENU_LABELS[i])
     }
