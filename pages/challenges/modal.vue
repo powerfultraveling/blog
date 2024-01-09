@@ -8,7 +8,7 @@
         >
           <div>
             <button class="btn font-sans basic-btn" @click="$modal.open('test')">Click</button>
-            <FModal name="test" />
+            <SModal name="test" />
           </div>
         </FeatureItemCard>
         <FeatureItemCard

@@ -4,7 +4,7 @@
       <div class="space-y-4">
         <FeatureItemCard :title="buttonInfo[ButtonType.SWITCH].title">
           <div>
-            <PSwitch :active="active" @change="active = !active" />
+            <SSwitch :active="active" @change="active = !active" />
           </div>
         </FeatureItemCard>
         <FeatureItemCard :title="buttonInfo[ButtonType.COVER].title">
