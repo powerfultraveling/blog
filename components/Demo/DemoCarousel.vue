@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <PSwiper :slides="slides" :options="options">
+    <SSwiper :slides="slides" :options="options">
       <template #controls="{ slidePrev, slideNext, isEnd, isBeginning }">
         <div class="flex space-x-4">
           <button :class="{ 'text-gray': isBeginning }" class="btn" @click="slidePrev">prev</button>
@@ -25,7 +25,7 @@
           </ul>
         </div>
       </template>
-    </PSwiper>
+    </SSwiper>
   </div>
 </template>
 

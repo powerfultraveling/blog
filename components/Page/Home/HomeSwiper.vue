@@ -2,7 +2,7 @@
   <div class="py-6 container">
     <div class="text-5xl font-medium">{{ title }}</div>
     <div class="relative">
-      <PSwiper :slides="slides" :options="options">
+      <SSwiper :slides="slides" :options="options">
         <template #controls="{ slidePrev, slideNext, isEnd, isBeginning }">
           <div class="flex justify-center py-5">
             <div class="flex items-center space-x-5">
@@ -14,7 +14,11 @@
                 <div class="caret rotate-45"></div>
                 <div class="caret-stroke"></div>
               </button>
-              <button :class="{ 'text-gray': isEnd }" class="control right-0" @click="slideNext">
+              <button
+                :class="{ 'text-gray': isEnd }"
+                class="control right-0"
+                @click="slideNext"
+              >
                 <div class="flex justify-end">
                   <div class="caret"></div>
                 </div>
@@ -56,28 +60,28 @@
             </ul>
           </div>
         </template>
-      </PSwiper>
+      </SSwiper>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 interface Props {
-  title: string
+  title: string;
   slides: {
-    image: string
-    date: string
-    label: string
-    content: string
-  }[]
+    image: string;
+    date: string;
+    label: string;
+    content: string;
+  }[];
 }
 
-defineProps<Props>()
+defineProps<Props>();
 
 const options = computed(() => ({
   slidesPerView: 1,
-  spaceBetween: 16
-}))
+  spaceBetween: 16,
+}));
 </script>
 
 <style scoped>
