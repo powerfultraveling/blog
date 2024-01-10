@@ -1,9 +1,14 @@
 <template>
-  <div class="flex justify-center">
+  <div class="flex justify-center font-sans">
     <div class="flex items-center space-x-4">
       <button @click="toPrev">
         <SIcon name="chevron-back-sharp" />
       </button>
+      <ul class="flex space-x-4 md:hidden">
+        <li>{{ currentPage }}</li>
+        <li>/</li>
+        <li class="text-gray">{{ pageCount }}</li>
+      </ul>
       <ul class="page-numbers">
         <li v-if="hasFirstEclipse" @click="changePage(FIRST_PAGE)">
           <div class="page-item" :class="{ active: currentPage === FIRST_PAGE }">
@@ -56,7 +61,9 @@ const hasNext = computed(() => currentPage.value < pageCount.value)
 
 const hasFirstEclipse = computed(() => currentPage.value >= NUMBER_FOR_ECLIPSE)
 const hasLastEclipse = computed(
-  () => pageCount.value > 8 && currentPage.value <= pageCount.value - NUMBER_FOR_ECLIPSE
+  () =>
+    pageCount.value > NUMBER_FOR_ECLIPSE &&
+    currentPage.value <= pageCount.value - NUMBER_FOR_ECLIPSE
 )
 
 function buildPages(min: number, max: number) {
@@ -73,13 +80,13 @@ const pages = computed(() => {
   const current = currentPage.value
 
   if (currentPage.value < NUMBER_FOR_ECLIPSE) {
-    const max = pageCount.value <= 8 ? pageCount.value : 8
+    const max = pageCount.value <= NUMBER_FOR_ECLIPSE ? pageCount.value : NUMBER_FOR_ECLIPSE
 
     return buildPages(FIRST_PAGE, max)
   }
 
   if (current >= pageCount.value - NUMBER_FOR_ECLIPSE) {
-    return buildPages(pageCount.value - 8, pageCount.value)
+    return buildPages(pageCount.value - NUMBER_FOR_ECLIPSE, pageCount.value)
   }
 
   if (currentPage.value >= NUMBER_FOR_ECLIPSE && currentPage.value < pageCount.value) {
@@ -116,11 +123,11 @@ function toNext() {
 
 <style scoped>
 .page-numbers {
-  @apply flex items-center space-x-4;
+  @apply hidden md:flex md:items-center md:space-x-4;
 
   /* FIXME: when current > 5, transition would be lag */
   .page-item {
-    @apply w-10 h-10 font-sans cursor-pointer transitable duration-1000;
+    @apply w-10 h-10 font-sans cursor-pointer;
     @apply flex items-center justify-center rounded-full;
 
     &.active {

@@ -17,6 +17,10 @@ const challenges = [
   {
     title: 'Form',
     to: '/challenges/form'
+  },
+  {
+    title: 'Pagination',
+    to: '/challenges/pagination'
   }
 ]
 </script>
