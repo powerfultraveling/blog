@@ -22,5 +22,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const { errorMessage } = useField(props.name)
+const { errorMessage } = useField(props.name, {
+  required: true
+})
 </script>

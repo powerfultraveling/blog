@@ -1,7 +1,8 @@
 <template>
-  <SField :name="name" :label="label" :required="required" :message="message">
+  <SField :name="name" :label="label" :required="required" :message="message" :rules="rules">
     <textarea v-if="isTextarea" @input="handleInput" />
     <input v-else v-bind="bindings" class="form-control" @input="handleInput" />
+    <div>{{ errorMessage }}</div>
   </SField>
 </template>
 
@@ -30,7 +31,11 @@ const props = withDefaults(defineProps<Props>(), {
   rules: ''
 })
 
-const { value: inputValue, handleChange } = useField(props.name)
+const {
+  value: inputValue,
+  handleChange,
+  errorMessage
+} = useField(props.name, { required: true, min: 8 })
 
 function handleInput(e: Event) {
   const value = (e.target as HTMLInputElement).value
