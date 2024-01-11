@@ -19,6 +19,7 @@
 
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
+import _ from 'lodash'
 import { useModalStore } from '~/store/modal'
 
 interface Props {
@@ -31,6 +32,25 @@ const { openedList } = storeToRefs(useModalStore())
 
 const isOpened = computed(() => {
   return openedList.value.includes(props.name)
+})
+
+const hasModalOpened = computed(() => {
+  return !_.isEmpty(openedList.value)
+})
+
+const { $scroll } = useNuxtApp()
+
+function manageScrollState() {
+  if (hasModalOpened.value) {
+    $scroll.lock()
+    return
+  }
+
+  $scroll.unlock()
+}
+
+watch(isOpened, () => {
+  manageScrollState()
 })
 </script>
 

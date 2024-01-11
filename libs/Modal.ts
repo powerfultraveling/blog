@@ -57,6 +57,7 @@ export default class Modal {
 
     if (!modal) {
       this.$store.setOpenedList(INITIAL_OPENED_LIST)
+      return
     }
 
     this.$store.setOpenedList([modal as string])
