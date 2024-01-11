@@ -9,11 +9,17 @@
           <AllSelect />
         </div>
       </FeatureItemCard>
+      <FeatureItemCard title="Input" :content="modalInfo[Form.ALL_SELECT].content">
+        <form>
+          <SInput name="normal" label="normal" required />
+        </form>
+      </FeatureItemCard>
     </template>
   </ChallengeInnerPageWrapper>
 </template>
 
 <script lang="ts" setup>
+import { useForm } from 'vee-validate'
 const { t } = useI18n()
 
 enum Form {
@@ -26,4 +32,13 @@ const modalInfo = {
     content: ''
   }
 }
+
+useForm({
+  validationSchema: {
+    normal: 'required|email'
+  },
+  initialValues: {
+    normal: 'hallo'
+  }
+})
 </script>

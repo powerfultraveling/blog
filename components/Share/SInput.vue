@@ -1,5 +1,5 @@
 <template>
-  <SField :name="name" :label="label" :required="required" :message="message">
+  <SField :name="name" :label="label" :required="required" :message="message" :rules="rules">
     <textarea v-if="isTextarea" @input="handleInput" />
     <input v-else v-bind="bindings" class="form-control" @input="handleInput" />
   </SField>

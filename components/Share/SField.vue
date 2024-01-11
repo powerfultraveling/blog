@@ -6,7 +6,9 @@
     <div class="mb-1">
       <slot />
     </div>
-    <div class="text-danger text-xs">{{ errorMessage }}</div>
+    <div class="text-danger text-xs">
+      {{ errorMessage }}
+    </div>
   </div>
 </template>
 
