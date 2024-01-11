@@ -51,6 +51,7 @@
     "@nuxtjs/i18n": "^8.0.0-rc.5",
     "@pinia/nuxt": "^0.5.1",
     "@types/lodash": "^4.14.202",
+    "@vee-validate/rules": "^4.12.4",
     "lodash": "^4.17.21",
     "pinia": "^2.1.7",
     "swiper": "^10.2.0",

@@ -33,7 +33,10 @@ const modalInfo = {
   }
 }
 
-const { values } = useForm({
+useForm({
+  validationSchema: {
+    normal: 'required|email'
+  },
   initialValues: {
     normal: 'hallo'
   }

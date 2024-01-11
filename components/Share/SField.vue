@@ -6,7 +6,9 @@
     <div class="mb-1">
       <slot />
     </div>
-    <div class="text-danger text-xs">{{ errorMessage }}</div>
+    <div class="text-danger text-xs">
+      {{ errorMessage }}
+    </div>
   </div>
 </template>
 
@@ -22,7 +24,5 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const { errorMessage } = useField(props.name, {
-  required: true
-})
+const { errorMessage } = useField(props.name)
 </script>
