@@ -1,19 +1,27 @@
 <template>
   <ChallengeInnerPageWrapper :title="$t('彈窗元件')">
     <template #right>
-      <FeatureItemCard
-        :title="modalInfo[Form.ALL_SELECT].title"
-        :content="modalInfo[Form.ALL_SELECT].content"
-      >
-        <div>
-          <AllSelect />
-        </div>
-      </FeatureItemCard>
-      <FeatureItemCard title="Input" :content="modalInfo[Form.ALL_SELECT].content">
-        <form>
-          <SInput name="normal" label="normal" required />
+      <div class="space-y-10">
+        <FeatureItemCard
+          :title="modalInfo[Form.ALL_SELECT].title"
+          :content="modalInfo[Form.ALL_SELECT].content"
+        >
+          <div>
+            <AllSelect />
+          </div>
+        </FeatureItemCard>
+        <form class="space-y-10">
+          <FeatureItemCard title="Input" :content="modalInfo[Form.ALL_SELECT].content">
+            <SInput name="normal" label="normal" required />
+          </FeatureItemCard>
+          <FeatureItemCard title="Clipboard" :content="modalInfo[Form.ALL_SELECT].content">
+            <div class="flex items-center space-x-4">
+              <SInput name="clipboard" required />
+              <SCopy :value="values.clipboard" />
+            </div>
+          </FeatureItemCard>
         </form>
-      </FeatureItemCard>
+      </div>
     </template>
   </ChallengeInnerPageWrapper>
 </template>
@@ -33,12 +41,13 @@ const modalInfo = {
   }
 }
 
-useForm({
+const { values } = useForm({
   validationSchema: {
     normal: 'required|email'
   },
   initialValues: {
-    normal: 'hallo'
+    normal: 'hallo',
+    clipboard: 'clipboard'
   }
 })
 </script>
