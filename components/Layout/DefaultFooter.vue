@@ -15,6 +15,7 @@
 import email from '~/assets/images/email.png'
 import github from '~/assets/images/github.svg'
 import medium from '~/assets/images/medium.svg'
+import linkedin from '~/assets/images/linkedin.svg'
 
 const links = [
   {
@@ -28,6 +29,10 @@ const links = [
   {
     image: medium,
     link: 'https://medium.com/@gastbyylion'
+  },
+  {
+    image: linkedin,
+    link: 'https://www.linkedin.com/in/%E6%81%82%E8%97%9D-%E8%94%A1-8656b3220/'
   }
 ]
 </script>
