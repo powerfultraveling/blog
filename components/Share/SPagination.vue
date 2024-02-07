@@ -41,11 +41,12 @@
 
 <script lang="ts" setup>
 interface Props {
-  total: number | undefined
+  total?: number
   perPage?: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  total: 0,
   perPage: 10
 })
 
