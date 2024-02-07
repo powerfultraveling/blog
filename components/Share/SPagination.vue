@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center font-sans">
+  <div v-if="total" class="flex justify-center font-sans">
     <div class="flex items-center space-x-4">
       <button @click="toPrev">
         <SIcon name="chevron-back-sharp" />
@@ -41,7 +41,7 @@
 
 <script lang="ts" setup>
 interface Props {
-  total: number
+  total: number | undefined
   perPage?: number
 }
 
