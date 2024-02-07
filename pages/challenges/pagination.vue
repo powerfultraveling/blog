@@ -15,11 +15,16 @@
 </template>
 
 <script lang="ts" setup>
-const { data } = await useAsyncData('pagination', () =>
+interface Post {
+  id: string
+  title: string
+}
+
+const { data } = await useAsyncData<Post[]>('pagination', () =>
   $fetch('https://jsonplaceholder.typicode.com/posts')
 )
 
-const dataTotalAmount = data.value.length
+const dataTotalAmount = data.value?.length
 
 const router = useRouter()
 const currentPage = computed(() => Number(router.currentRoute.value.query.page || 1))
@@ -27,7 +32,7 @@ const currentPage = computed(() => Number(router.currentRoute.value.query.page |
 const DATA_PER_PAGE = 5
 
 const dataToShow = computed(() => {
-  return data.value.slice(
+  return data.value?.slice(
     (currentPage.value - 1) * DATA_PER_PAGE,
     currentPage.value * DATA_PER_PAGE
   )
