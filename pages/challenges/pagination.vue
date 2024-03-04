@@ -44,7 +44,7 @@ ul {
   @apply space-y-4;
 
   li {
-    @apply p-4 border border-y-gray;
+    @apply p-4 border border-gray;
   }
 }
 </style>
