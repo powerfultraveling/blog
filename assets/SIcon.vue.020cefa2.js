@@ -1,0 +1,1 @@
+import a from"./Icon.ad03dc91.js";import{f as t,k as s,o as m,h as p,i as _}from"./entry.4079d3b3.js";const r="ion",k=t({__name:"SIcon",props:{pack:{default:r},name:{}},setup(o){const n=o,c=s(()=>`${n.pack}:${n.name}`);return(i,u)=>{const e=a;return m(),p(e,{name:_(c),class:"s-icon"},null,8,["name"])}}});export{k as _};
