@@ -39,15 +39,20 @@
 
   img {
     @apply w-40 h-40 object-contain transition-all duration-300;
+
+    &:hover {
+      @apply w-100 h-100;
+    }
   }
 }
 
-img:hover {
+/* TODO: This codes could be back is needed in the future */
+/* img:hover {
   animation: bounce 0.5s;
   animation-iteration-count: infinite;
-}
+} */
 
-@keyframes bounce {
+/* @keyframes bounce {
   0% {
     transform: translate(1px, 1px) rotate(0);
   }
@@ -91,5 +96,5 @@ img:hover {
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
   }
-}
+} */
 </style>
