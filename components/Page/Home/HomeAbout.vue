@@ -47,6 +47,7 @@
 }
 
 /* TODO: This codes could be back is needed in the future */
+
 /* img:hover {
   animation: bounce 0.5s;
   animation-iteration-count: infinite;
