@@ -1,0 +1,9 @@
+
+name = "blog"
+main = "./.output/server/index.mjs"
+workers_dev = true
+compatibility_date = "2025-05-23"
+
+[site]
+bucket = ".output/public"
+
