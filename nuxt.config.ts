@@ -2,13 +2,9 @@ import i18nConfig from './config/i18n'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  nitro: {
-    preset: 'cloudflare'
-  },
-  app: {
-    baseURL: '/',
-    buildAssetsDir: 'assets'
-  },
+  // nitro: {
+  //   preset: 'cloudflare'
+  // },
 
   devtools: { enabled: true },
 
