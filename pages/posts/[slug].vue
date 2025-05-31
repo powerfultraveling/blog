@@ -1,7 +1,6 @@
 <template>
   <div v-if="post">
-    <h1>{{ post.data.title }}</h1>
-    <div v-html="post.content"></div>
+    <Article :title="post.data.title" :content="post.content" />
   </div>
 </template>
 

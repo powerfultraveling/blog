@@ -1,0 +1,19 @@
+<template>
+  <div class="container">
+    <div class="flex flex-col py-10 max-w-[900px] mx-auto">
+      <div class="">
+        <h1 class="text-8xl mb-10 test">{{ props.title }}</h1>
+      </div>
+      <div class="article" v-html="props.content"></div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+interface Props {
+  title: string
+  content: string
+}
+
+const props = defineProps<Props>()
+</script>
