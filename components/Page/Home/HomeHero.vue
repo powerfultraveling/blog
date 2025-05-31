@@ -5,9 +5,9 @@
       <div>不時會寫一些生活中覺得有趣的事</div>
     </div>
     <div class="pt-10">
-      <button class="">
+      <PLink to="/about">
         <SUnderlineBtn label="關於文書房" />
-      </button>
+      </PLink>
     </div>
   </div>
 </template>
