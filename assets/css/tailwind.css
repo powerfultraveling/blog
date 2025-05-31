@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* TODO: 字體的引入需要被優化 */
+
+:root {
+  --tracking-lg: 4px;
+  --tracking-md: 1.5px;
+  --tracking-sm: 0.6px;
+  --tracking-xs: 0.5px;
+}
+
+.h1 {
+  @apply text-lg font-medium tracking-[var(--tracking-lg)] lg:text-2xl;
+}
+
+.h2 {
+  @apply text-lg font-bold tracking-[var(--tracking-lg)] lg:text-xl;
+}
+
+.h3 {
+  @apply text-lg font-bold tracking-[var(--tracking-lg)] lg:text-2xl;
+}
+
+.h4 {
+  @apply text-base font-medium tracking-[var(--tracking-xs)] lg:text-lg;
+}
+
+.h5 {
+  @apply text-lg font-medium tracking-[var(--tracking-md)] lg:text-xl;
+}
+
+.text-body-medium {
+  @apply text-sm font-medium tracking-[var(--tracking-sm)] lg:text-lg;
+}
+
+.text-body {
+  @apply text-sm  tracking-[var(--tracking-sm)] lg:text-lg;
+}
+
+.text-category-medium {
+  @apply text-xs font-medium lg:text-base;
+}
+
+.text-category {
+  @apply text-xs lg:text-base;
+}
+
+.text-caption {
+  @apply text-xs leading-[180%] lg:text-xs;
+}

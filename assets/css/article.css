@@ -1,0 +1,17 @@
+.article {
+  h1 {
+    @apply text-6xl mb-5 pt-10  !important;
+  }
+
+  h2 {
+    @apply text-4xl mb-2 pt-4;
+  }
+
+  p {
+    @apply text-base mb-4;
+  }
+
+  ul {
+    @apply list-disc pl-5 mb-4;
+  }
+}
