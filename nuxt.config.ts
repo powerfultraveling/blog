@@ -5,10 +5,10 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'cloudflare'
   },
-  app: {
-    baseURL: '/',
-    buildAssetsDir: 'assets'
-  },
+  // app: {
+  //   baseURL: '/',
+  //   buildAssetsDir: 'assets'
+  // },
 
   devtools: { enabled: true },
 
