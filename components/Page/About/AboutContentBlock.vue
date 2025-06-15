@@ -5,11 +5,11 @@
     </div>
     <div class="content py-4">
       <ul class="space-y-2">
-        <li v-for="(item, i) in info.infoItems" :key="i">
+        <li v-for="(item, i) in info.items" :key="i">
           <div class="dot">
             <div />
           </div>
-          <div>{{ item }}</div>
+          <div class="font-sans max-w-[700px]">{{ item }}</div>
         </li>
       </ul>
     </div>
@@ -20,7 +20,7 @@
 interface Props {
   info: {
     title: string
-    infoItems: string[]
+    items: string[]
   }
 }
 
@@ -32,7 +32,7 @@ defineProps<Props>()
   @apply font-serif lg:grid lg:grid-cols-12 gap-x-4;
 
   .title {
-    @apply text-5xl mb-4 lg:mb-0 lg:col-start-1 lg:col-end-3;
+    @apply text-4xl mb-4 lg:mb-0 lg:col-start-1 lg:col-end-3;
   }
 
   .content {
