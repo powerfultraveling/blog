@@ -4,7 +4,6 @@
       <LinkListItem :title="title" />
     </a>
     <PLink v-else :to="to">
-      {{ isExternal }}
       <LinkListItem :title="title" />
     </PLink>
   </div>
@@ -14,7 +13,7 @@
 interface Props {
   title: string
   to: string
-  isExternal: boolean
+  isExternal?: boolean
 }
 
 defineProps<Props>()
