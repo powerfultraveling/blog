@@ -3,52 +3,27 @@
     <PageTitleWithLayout title="文章列表" />
 
     <div class="container">
-      <ListLink
-        v-for="{ title, to } in articleList"
-        :key="to"
-        :title="title"
-        :to="to"
-        is-external
-      />
+      <ListLink v-for="{ title, to } in normalizeArticleList" :key="to" :title="title" :to="to" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { flatMap } from 'lodash-es'
 import { getAllArticlesMeta } from '~/apis/article'
+import type { ArticleMetaData } from '~/libs/types'
 
 const { data } = await useAsyncData('articles', () => getAllArticlesMeta())
-console.log('data', data.value)
 
-// const articleList = data.value.map((item: any) => ({
-//   to: item.path,
-//   title: item.title
-// }))
-
-// console.log('articleList', articleList)
-
-// const articleList = [
-//   {
-//     to: '/posts/1',
-//     title: '文章1',
-//     isExternal: false
-//   },
-//   {
-//     to: '/posts/2',
-//     title: '文章2',
-//     isExternal: false
-//   },
-//   {
-//     to: '/posts/2',
-//     title: '文章2',
-//     isExternal: false
-//   },
-//   {
-//     to: '/posts/2',
-//     title: '文章2',
-//     isExternal: false
-//   }
-// ]
+const normalizeArticleList = computed(() => {
+  if (!data.value) return []
+  return flatMap(data.value, (item: ArticleMetaData[]) => {
+    return item.map((item: ArticleMetaData) => ({
+      ...item,
+      to: `/posts/${item.fileName}?category=${item.category}`
+    }))
+  })
+})
 </script>
 
 <style scoped>
