@@ -1,10 +1,11 @@
 <template>
   <div class="list-link">
     <a v-if="isExternal" :href="to" target="_blank">
-      <ListLinkItem :title="title" />
+      <LinkListItem :title="title" />
     </a>
     <PLink v-else :to="to">
-      <ListLinkItem :title="title" />
+      {{ isExternal }}
+      <LinkListItem :title="title" />
     </PLink>
   </div>
 </template>

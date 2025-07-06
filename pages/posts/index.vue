@@ -2,35 +2,61 @@
   <div class="pt-10">
     <PageTitleWithLayout title="文章列表" />
 
-    <!-- <div class="container">
+    <div class="container">
       <ListLink
-        v-for="{ title, link } in articleList"
-        :key="link"
+        v-for="{ title, to } in articleList"
+        :key="to"
         :title="title"
-        :to="link"
+        :to="to"
         is-external
       />
-    </div> -->
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { getAllArticlesMeta } from '~/apis/article'
+
+const { data } = await useAsyncData('articles', () => getAllArticlesMeta())
+console.log('data', data.value)
+
+// const articleList = data.value.map((item: any) => ({
+//   to: item.path,
+//   title: item.title
+// }))
+
+// console.log('articleList', articleList)
+
 // const articleList = [
 //   {
-//     link: '/posts/1',
-//     title: '文章1'
+//     to: '/posts/1',
+//     title: '文章1',
+//     isExternal: false
 //   },
 //   {
-//     link: '/posts/2',
-//     title: '文章2'
+//     to: '/posts/2',
+//     title: '文章2',
+//     isExternal: false
+//   },
+//   {
+//     to: '/posts/2',
+//     title: '文章2',
+//     isExternal: false
+//   },
+//   {
+//     to: '/posts/2',
+//     title: '文章2',
+//     isExternal: false
 //   }
 // ]
 </script>
 
 <style scoped>
-.list-link {
-  &:nth-child(odd) {
-    @apply bg-white;
+:deep(.list-link) {
+  &:last-child:not(:first-child) {
+    .link-list-item {
+      @apply border-b-0;
+    }
   }
 }
 </style>
