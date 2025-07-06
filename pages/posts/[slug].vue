@@ -8,10 +8,22 @@
 import { useRoute } from 'vue-router'
 import MarkdownIt from 'markdown-it'
 import frontMatter from 'markdown-it-front-matter'
+import { getArticle } from '~/apis/article'
 
 const route = useRoute()
 const slug = route.params.slug
 const md = new MarkdownIt()
+
+async function getArticleHandler() {
+  const category = route.query.category
+  const fileName = route.params.slug
+  const path = `${category}/${fileName}`
+  const res = await getArticle(path)
+  return res
+}
+
+const { data } = await useAsyncData('article', async () => await getArticleHandler())
+console.log('data', data.value)
 
 const post = ref({ data: {}, content: '' })
 
