@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- TODO: This would need to be refactored -->
     <!-- <HomeAbout /> -->
     <HomeHero />
     <!-- <HomeProjects /> -->
