@@ -7,7 +7,7 @@ export const button = plugin(({ addUtilities }) => {
         {}
     },
     '.btn-block': {
-      '@apply w-full': {}
+      '@apply w-full':  {}
     }
   })
 
