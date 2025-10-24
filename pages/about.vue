@@ -1,6 +1,7 @@
 <template>
   <div class="pt-10">
     <AboutTitle />
+    <AboutBrief />
     <AboutContent />
   </div>
 </template>
