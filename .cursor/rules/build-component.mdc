@@ -1,0 +1,45 @@
+---
+description: This Rule would be applied when building Nextjs component
+alwaysApply: false
+---
+
+When building new components, we must follow the patterns.
+
+### 1. Component Structure & Naming
+
+- **Architecture:**
+
+  - Don't implement main logic in the `page.tsx` file, but build a component like a main entry point for that page. For exmple, if I want to build implement the logic in Home page. I would prefer building a component call HomePageMainBlock as the main component instead coding in the `home
+  - Follow clean code principle but don't be too over.
+
+- **File Naming**:
+  - Shared components should be prefixed with `S` (e.g., `SInput.tsx`, `SField.tsx`)
+- **Declaration**: Use a default function export.
+  - `export default function SInput({ ... }: Props) { ... }`
+- **Client Components**: If a component uses state, event handlers, or other client-side hooks, it must have `"use client";` at the top.
+- **Form Component:** When building form component, please use react form hook to do so.
+
+### 2. Props & Typing
+
+- **Type Definition**: Always use `interface` to define props, and name it `Props`.
+- **Props Handling**:
+  - Destructure props directly in the function signature.
+  - For controlled inputs, the component must accept `value` and `onChange` props.
+  - The `onChange` callback should return the processed value directly, not the raw browser event.
+    - **Good**: `onChange: (value: string) => void;`
+    - **Bad**: `onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;`
+
+### 3. Composition & Reusability
+
+- **Wrapper Components**: Utilize wrapper components for shared logic. For example, all form inputs must be wrapped with the `SField` component, which is responsible for displaying validation error messages. The `error` prop must be passed to `SField`.
+
+### 4. Styling
+
+- **Use Tailwind**: this project use tailwindv4, use tailwindcss syntax as possbile, arbitrary value is better than inline style
+- **CSS Classes**: Use the `clsx` utility for conditionally applying Tailwind CSS classes.
+- **Style Application**:Apply styles directly in the `className` attribute. Avoid inline `style` objects.
+- **Use Design Tokens**: Refer to `tailwind.config.ts` and use semantic design tokens (e.g., `bg-background`, `text-caption`) whenever possible.\
+
+### 5. notices
+
+- Please provide usage example at the end.

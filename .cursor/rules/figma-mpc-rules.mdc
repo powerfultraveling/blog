@@ -1,0 +1,36 @@
+---
+description: This Rule would be applied when using Figma MCP to build UI
+alwaysApply: false
+---
+
+#### 1. Analyze and Deconstruct
+
+- Finding the focused frame in Figma using FIGMA MCP
+
+- The initial output is a literal translation of Figma layers. Identify the semantic structure (e.g., forms, buttons, cards) and disregard the verbose `div` nesting.
+
+- The output uses hardcoded styles and local image URLs (e.g., `http://localhost:3845/...`). These must be replaced.
+
+#### 2. Replace with Shared Components
+
+- **Crucial Step**: Do not reimplement existing components. Replace generic HTML elements from the Figma output with our established shared components from `src/components/Shared/`.
+- **Buttons**: Replace `<div class="bg-black ...">` with `<SPrimaryButton>` or `<SBlackButton>`.
+- **Inputs**: Replace `<div class="bg-neutral-100 ...">` inputs with our `<SInput>` component.
+- **Other UI**: For any other repeating UI patterns, check if a shared component already exists before writing new code.
+
+#### 3. Styling and Layout
+
+- **Convert to Tailwind**: This project use tailwindv4, use tailwindcss syntax as possbile, arbitrary value is better than inline style.
+- **Use Design Tokens**: Refer to `tailwind.config.ts` and use semantic design tokens (e.g., `bg-background`, `text-caption`) whenever possible.
+- **Layout Refactoring**: Replace absolute positioning with modern, responsive layouts using Flexbox (`flex`) and Grid (`grid`).
+
+#### 4. Asset Handling
+
+- **Local Assets**: All image assets served from `localhost` in the Figma output must be saved into our project's `src/assets/` directory.
+- **Update Paths**: Update `<img>` `src` attributes to import and use the newly saved local assets.
+- **Component Usage**: Use the Next.js `<Image>` component for all images to ensure optimization.
+
+#### 5. Add Functionality
+
+- The generated code is static. Add necessary state (`useState`) and event handlers (`onClick`, `onChange`) to make the component interactive.
+- Ensure the component is a "use client" component if it contains any interactivity.

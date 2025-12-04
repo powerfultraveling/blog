@@ -1,0 +1,11 @@
+---
+description: This is the tech related requirements that need to be followed in this project.
+globs:
+alwaysApply: true
+---
+
+- Tech stack: Next(15.4.4), tailwindcss, react-hook-form, use-hook-ts Zod, Zustand, Konva, Supabase, supabase-client, pnpm
+- Use `pnpm add` when installing new packages.
+- Yxou are not able to read or modiy `.env` files directly, so tell the user what they should add to the file if needed.
+- Avoid classes/OPP and use functional programming style.
+- Never try to start the APP itself( I have it running in a seperate terminal).
