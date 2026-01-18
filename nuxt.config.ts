@@ -12,7 +12,7 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/stylelint-module', '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/stylelint-module', '@nuxtjs/i18n', '@nuxtjs/supabase'],
 
   i18n: {
     langDir: 'locales',
