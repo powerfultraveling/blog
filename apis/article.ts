@@ -1,4 +1,4 @@
-import { API_BASE_URL, ARTICLES_META_URL } from '~/libs/const'
+import { API_BASE_URL, ARTICLES_META_URL, ARTICLE_CONTENT_BASE_URL } from '~/libs/const'
 
 export async function getArticlesByCategory(category: string) {
   try {
@@ -15,8 +15,10 @@ export async function getArticlesByCategory(category: string) {
 
 export async function getArticle(path: string) {
   try {
-    const result = await fetch(`${API_BASE_URL}/${path}`)
-    const data = await result.json()
+    const result = await fetch(`${ARTICLE_CONTENT_BASE_URL}/${path}`)
+    console.log('result', result)
+    const data = await result.text()
+
     console.log('data', data)
 
     return data
