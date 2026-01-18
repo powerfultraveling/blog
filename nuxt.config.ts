@@ -14,6 +14,10 @@ export default defineNuxtConfig({
 
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/stylelint-module', '@nuxtjs/i18n', '@nuxtjs/supabase'],
 
+  supabase: {
+    redirect: false
+  },
+
   i18n: {
     langDir: 'locales',
     strategy: 'prefix_except_default',
