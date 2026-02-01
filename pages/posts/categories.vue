@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-const client = useSupabaseClient()
+const client = useAppSupabase()
 
 const { data: categories } = await useAsyncData('categories', async () => {
   const { data } = await client.from('post_categories').select('*')

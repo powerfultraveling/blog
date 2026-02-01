@@ -3,27 +3,26 @@
     <PageTitleWithLayout title="文章列表" />
 
     <div class="container">
-      <ListLink v-for="{ title, to } in normalizeArticleList" :key="to" :title="title" :to="to" />
+      <ListLink v-for="{ title, to } in mappedPosts" :key="to" :title="title" :to="to" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { flatMap } from 'lodash-es'
-import { getAllArticlesMeta } from '~/apis/article'
-import type { ArticleMetaData } from '~/libs/types'
+const client = useAppSupabase()
 
-const { data } = await useAsyncData('articles', () => getAllArticlesMeta())
-
-const normalizeArticleList = computed(() => {
-  if (!data.value) return []
-  return flatMap(data.value, (item: ArticleMetaData[]) => {
-    return item.map((item: ArticleMetaData) => ({
-      ...item,
-      to: `/posts/${item.fileName}?category=${item.category}`
-    }))
-  })
+const { data: posts } = await useAsyncData('posts', async () => {
+  const { data } = await client.from('posts').select('*')
+  return data
 })
+
+const mappedPosts = computed(
+  () =>
+    posts.value?.map((post) => ({
+      title: post.title,
+      to: `/posts/${post.id}`
+    })) ?? []
+)
 </script>
 
 <style scoped>
