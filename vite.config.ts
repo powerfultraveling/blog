@@ -7,6 +7,6 @@ export default defineConfig({
   plugins: [
     svgLoader({ defaultImport: 'url' }),
     { ...eslint({ ignorePath: '.prettierignore' }), apply: 'serve' },
-    { ...stylelint({ ignorePath: '.prettierignore' }), apply: 'serve' }
+    { ...stylelint({ ignorePath: '.prettierignore', cache: false }), apply: 'serve' }
   ]
 })
