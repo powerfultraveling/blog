@@ -4,7 +4,11 @@
   }
 
   h2 {
-    @apply text-4xl mb-2 pt-4;
+    @apply text-5xl mb-2 pt-4 font-serif font-medium;
+  }
+
+  h3 {
+    @apply text-2xl mb-2 pt-3;
   }
 
   p {
@@ -12,6 +16,10 @@
   }
 
   ul {
-    @apply list-disc pl-5 mb-4;
+    @apply list-disc pl-5 mb-4 space-y-2;
+  }
+
+  a {
+    @apply text-orange-800 underline;
   }
 }
