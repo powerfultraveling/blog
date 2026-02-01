@@ -31,6 +31,10 @@ const links = [
   {
     label: '關於我',
     to: '/about'
+  },
+  {
+    label: '文章列表',
+    to: '/posts'
   }
   // TODO: 之後需加上
   // {
