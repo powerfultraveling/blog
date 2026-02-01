@@ -10,6 +10,10 @@ export default defineNuxtConfig({
   //   buildAssetsDir: 'assets'
   // },
 
+  runtimeConfig: {
+    supabaseUrl: process.env.SUPABASE_URL,
+    supabaseKey: process.env.SUPABASE_KEY
+  },
   devtools: { enabled: true },
   stylelint: {
     cache: false
