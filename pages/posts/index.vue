@@ -1,7 +1,6 @@
 <template>
   <div class="pt-10">
     <PageTitleWithLayout title="文章列表" />
-
     <div class="container">
       <ListLink v-for="{ title, to } in mappedPosts" :key="to" :title="title" :to="to" />
     </div>
