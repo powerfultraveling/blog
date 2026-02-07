@@ -7,3 +7,12 @@ export interface ArticleMetaData {
   date: string
   description: string
 }
+
+export interface ProjectItem {
+  image: string
+  title: string
+  description: string
+  tags: string[]
+  projectLink?: string
+  articleLink?: string
+}

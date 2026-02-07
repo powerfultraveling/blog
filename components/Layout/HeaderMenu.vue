@@ -35,12 +35,11 @@ const links = [
   {
     label: '文章列表',
     to: '/posts'
+  },
+  {
+    label: '作品集',
+    to: '/projects'
   }
-  // TODO: 之後需加上
-  // {
-  //   label: '作品集',
-  //   to: '/'
-  // }
 ]
 
 // FIXME: Type 有問題，generate 會出問題
