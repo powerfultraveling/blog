@@ -1,6 +1,6 @@
 <template>
-  <aside
-    class="w-64 md:w-80 bg-[#B21E06] text-white p-6 flex flex-col sticky top-0 h-screen rounded-l-[40px] shadow-2xl"
+  <div
+    class="w-full lg:w-80 bg-[#B21E06] text-white p-6 flex flex-col sticky top-0 h-screen rounded-l-[40px] shadow-2xl px-4 lg:px-0"
   >
     <div class="flex justify-center mb-10 pl-4">
       <div class="w-full py-3 flex items-center justify-center rounded-sm bg-[#92e06f]">
@@ -34,7 +34,7 @@
         </li>
       </ul>
     </div>
-  </aside>
+  </div>
 </template>
 
 <script setup>
