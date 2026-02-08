@@ -7,7 +7,12 @@
       :is-end="isEnd"
       :is-beginning="isBeginning"
     />
-    <Swiper v-bind="options" class="h-full" @swiper="handleReady" @slideChange="handleSlideChange">
+    <Swiper
+      v-bind="bindOptions"
+      class="h-full"
+      @swiper="handleReady"
+      @slideChange="handleSlideChange"
+    >
       <SwiperSlide v-for="(slide, index) in slides" :key="index" class="h-auto">
         <slot :slide="slide" />
       </SwiperSlide>
@@ -26,8 +31,20 @@ interface Props {
   options: SwiperOptions
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   options: () => ({})
+})
+
+const bindOptions = computed(() => {
+  const o = props.options
+  return {
+    ...o,
+    width: o.width ?? undefined,
+    height: o.height ?? undefined,
+    userAgent: o.userAgent ?? undefined,
+    url: o.url ?? undefined,
+    loopedSlides: o.loopedSlides ?? undefined
+  } as Record<string, unknown>
 })
 
 const swiper = ref<SwiperClass>()

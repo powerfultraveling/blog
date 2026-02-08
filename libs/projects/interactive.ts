@@ -18,7 +18,8 @@ export const interactive: ProjectItem[] = [
     description:
       '鬼滅之刃活動遊戲，因為是活動遊戲，整體加上了許多比較酷炫的動畫效果，是一個比較活潑的遊戲',
     tags: ['React', 'Game'],
-    articleLink: 'https://kimetsu-exhibition.boring-lab.com/'
+    articleLink:
+      'https://www.boring-lab.com/work/demon-slayer-kimetsu-noyaibathemovie-infinity-castle'
   },
   {
     image: tcKioskImage,
