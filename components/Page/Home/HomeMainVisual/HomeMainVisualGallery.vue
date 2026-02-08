@@ -16,34 +16,22 @@ import vulfpeck from '@/assets/images/home/vulfpeck.png'
 const items = [
   {
     image: takanaka,
+    title: `That's the way of the world`,
     link: 'https://www.youtube.com/watch?v=ZZ2WPRrGZEE'
   },
   {
     image: oscar,
+    title: `The Girl from Ipanema`,
     link: 'https://www.youtube.com/watch?v=55qFfWIMmak'
   },
   {
     image: vulfpeck,
+    title: `Dean Town`,
     link: 'https://www.youtube.com/watch?v=rhxQoDlt2AU'
   },
   {
     image: ryo,
-    link: 'https://www.youtube.com/watch?v=F5EFsUU7RRA'
-  },
-  {
-    image: takanaka,
-    link: 'https://www.youtube.com/watch?v=ZZ2WPRrGZEE'
-  },
-  {
-    image: oscar,
-    link: 'https://www.youtube.com/watch?v=55qFfWIMmak'
-  },
-  {
-    image: vulfpeck,
-    link: 'https://www.youtube.com/watch?v=rhxQoDlt2AU'
-  },
-  {
-    image: ryo,
+    title: `Early Summer `,
     link: 'https://www.youtube.com/watch?v=F5EFsUU7RRA'
   }
 ]
