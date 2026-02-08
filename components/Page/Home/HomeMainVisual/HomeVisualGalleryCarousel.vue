@@ -2,9 +2,16 @@
   <div class="relative lg:h-[800px] overflow-hidden gallery-carousel">
     <PSwiper :slides="slides" :options="options">
       <template #default="{ slide }">
-        <div class="md:w-32 aspect-square bg-gray-200 rounded-2xl overflow-hidden shadow-sm">
-          <a :href="slide.link" target="_blank" class="block w-full h-full">
+        <div
+          class="md:w-32 aspect-square bg-gray-200 rounded-2xl overflow-hidden shadow-sm relative"
+        >
+          <a :href="slide.link" target="_blank" class="block w-full h-full relative group">
             <img :src="slide.image" alt="sidebar-item" class="w-full h-full object-cover" />
+            <div
+              class="absolute bottom-0 top-0 left-0 right-0 p-2 bg-black/50 text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              {{ slide.title }}
+            </div>
           </a>
         </div>
       </template>
