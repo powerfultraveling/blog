@@ -1,8 +1,8 @@
 <template>
-  <header class="w-full bg-primary relative">
-    <div class="header-wrapper container">
+  <header class="w-full bg-primary relative container">
+    <div class="header-wrapper">
       <PLink to="/">
-        <img src="~/assets/images/logo/logo-word-2.svg" class="w-20" />
+        <img src="~/assets/images/logo/powerful-logo.svg" class="w-35" />
         <!-- <div class="text-[30px] font-serif font-bold">蔡藝屋</div> -->
       </PLink>
       <!-- TODO: could recover it if needed -->

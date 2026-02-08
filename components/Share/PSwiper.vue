@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-full">
     <slot
       name="controls"
       :slide-prev="slidePrev"
@@ -7,28 +7,18 @@
       :is-end="isEnd"
       :is-beginning="isBeginning"
     />
-    <Swiper
-      :slides-per-view="options.slidesPerView"
-      :space-between="options.spaceBetween"
-      :effect="options.effect"
-      :autoplay="options.autoplay"
-      :modules="[EffectFade, Autoplay]"
-      @swiper="handleReady"
-      @slideChange="handleSlideChange"
-    >
-      <SwiperSlide v-for="(slide, index) in slides" :key="index">
+    <Swiper v-bind="options" class="h-full" @swiper="handleReady" @slideChange="handleSlideChange">
+      <SwiperSlide v-for="(slide, index) in slides" :key="index" class="h-auto">
         <slot :slide="slide" />
       </SwiperSlide>
     </Swiper>
     <slot name="pagination" :slide-to="slideTo" :active="localActive" />
   </div>
 </template>
+
 <script lang="ts" setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { EffectFade, Autoplay } from 'swiper/modules'
-// FIX: type file may have problem
 import { SwiperOptions, Swiper as SwiperClass } from 'swiper/types'
-
 import 'swiper/css'
 
 interface Props {
@@ -40,21 +30,25 @@ withDefaults(defineProps<Props>(), {
   options: () => ({})
 })
 
-const swiper = ref()
+const swiper = ref<SwiperClass>()
 const localActive = ref(0)
 const isEnd = ref(false)
 const isBeginning = ref(false)
 
 function handleReady(swiperInstance: SwiperClass) {
   swiper.value = swiperInstance
+  // 強制初始化後更新一次，解決垂直高度計算延遲
+  setTimeout(() => {
+    swiperInstance.update()
+  }, 100)
 }
 
 function slidePrev(): void {
-  swiper.value.slidePrev()
+  swiper.value?.slidePrev()
 }
 
 function slideNext(): void {
-  swiper.value.slideNext()
+  swiper.value?.slideNext()
 }
 
 function setLocalActivce(activeIndex: number) {
@@ -62,12 +56,13 @@ function setLocalActivce(activeIndex: number) {
 }
 
 function setSwiperStates() {
+  if (!swiper.value) return
   isEnd.value = swiper.value.isEnd
   isBeginning.value = swiper.value.isBeginning
 }
 
 function slideTo(index: number) {
-  swiper.value.slideTo(index)
+  swiper.value?.slideTo(index)
 }
 
 function handleSlideChange(swiperInstance: SwiperClass): void {

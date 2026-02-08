@@ -2,6 +2,12 @@ import i18nConfig from './config/i18n'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: '蔡恂藝部落格',
+      meta: [{ name: 'description', content: '蔡恂藝的個人網站' }]
+    }
+  },
   nitro: {
     preset: 'cloudflare'
   },

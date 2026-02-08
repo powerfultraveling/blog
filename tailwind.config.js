@@ -84,7 +84,7 @@ module.exports = {
           DEFAULT: '#fafaf5',
           dark: '#b81e18'
         },
-        secondary: '#2d4d5f',
+        secondary: '#0070BC',
         danger: {
           light: '#ffebee',
           DEFAULT: '#f44336',
