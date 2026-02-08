@@ -1,7 +1,8 @@
 <template>
   <div>
     <!-- <HomeAbout /> -->
-    <HomeHero />
+    <HomeMainVisual />
+    <!-- <HomeHero /> -->
     <!-- <HomeProjects /> -->
   </div>
 </template>

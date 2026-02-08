@@ -10,6 +10,8 @@
     <Swiper
       :slides-per-view="options.slidesPerView"
       :space-between="options.spaceBetween"
+      :direction="options.direction"
+      :breakpoints="options.breakpoints"
       :effect="options.effect"
       :autoplay="options.autoplay"
       :modules="[EffectFade, Autoplay]"
