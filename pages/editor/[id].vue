@@ -1,6 +1,13 @@
 <template>
   <div>
-    <Editor :id="id" :content="postContent" @change="handleChange" @save="handleSave" />
+    <Editor
+      :id="id"
+      :post-data="postData"
+      @change="handleChange"
+      @save="handleSave"
+      @change-title="handleChangeTitle"
+      @change-status="handleChangeStatus"
+    />
   </div>
 </template>
 
@@ -10,7 +17,7 @@ import { useAddNewPost } from '@/composables/editor/useAddNewPost'
 
 const route = useRoute()
 const id = route.params.id
-const postContent = ref('')
+const postData = ref<Post | null>(null)
 const client = useAppSupabase()
 const { handleSavePost } = useAddNewPost()
 
@@ -25,13 +32,34 @@ const { data: post } = await useAsyncData('post', async () => {
   return data
 })
 
-postContent.value = post.value?.content
+postData.value = post.value
 
 const handleChange = (text: string) => {
-  postContent.value = text
+  postData.value = {
+    ...postData.value,
+    content: text
+  }
 }
 
 const handleSave = async () => {
-  handleSavePost(id.toString(), postContent.value)
+  handleSavePost(id.toString(), {
+    title: postData.value?.title ?? '',
+    content: postData.value?.content ?? '',
+    status: postData.value?.status ?? ''
+  })
+}
+
+const handleChangeTitle = (text: string) => {
+  postData.value = {
+    ...postData.value,
+    title: text
+  }
+}
+
+const handleChangeStatus = (status: string) => {
+  postData.value = {
+    ...postData.value,
+    status
+  }
 }
 </script>

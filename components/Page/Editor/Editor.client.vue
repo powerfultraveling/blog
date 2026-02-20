@@ -1,14 +1,14 @@
 <template>
   <div class="p-4 container">
     <ClientOnly>
-      <div class="flex justify-end mb-4">
-        <div>
-          <SDropdown v-model="selectedOption" :options="options" placeholder="選擇文章狀態" />
-        </div>
-        <button class="btn btn-info" @click="handleSave">SAVE</button>
-      </div>
+      <EditorMetaInfo
+        :post-data="props.postData"
+        @save="handleSave"
+        @change-title="handleChangeTitle"
+        @change-status="handleChangeStatus"
+      />
       <v-md-editor
-        :model-value="props.content"
+        :model-value="props.postData.content"
         height="500px"
         :disabled-menus="[]"
         @upload-image="handleUploadImage"
@@ -20,22 +20,18 @@
 
 <script setup lang="ts">
 // 1. 獲取 Supabase 客戶端實例
-import { Option } from '@/libs/types'
+import { Post } from '@/libs/types'
 const props = defineProps<{
-  title: string
+  postData: Post
   content: string
   id: string
 }>()
 
-const selectedOption = ref<string>('draft')
-const options = ref<Option[]>([
-  { value: 'draft', label: '草稿' },
-  { value: 'published', label: '發布' }
-])
-
 const emit = defineEmits<{
   (e: 'change', text: string): void
   (e: 'save'): void
+  (e: 'changeTitle', text: string): void
+  (e: 'changeStatus', status: string): void
 }>()
 
 const handleChange = (text: string) => {
@@ -46,6 +42,13 @@ const handleSave = async () => {
   emit('save')
 }
 
+const handleChangeTitle = (text: string) => {
+  emit('changeTitle', text)
+}
+
+const handleChangeStatus = (status: string) => {
+  emit('changeStatus', status)
+}
 const client = useAppSupabase()
 // const markdownText = ref<string>('# 試試看拖放圖片到這裡')
 

@@ -21,10 +21,13 @@ export const useAddNewPost = () => {
     }
   }
 
-  const handleSavePost = async (id: string, content: string) => {
+  const handleSavePost = async (
+    id: string,
+    postData: { title: string; content: string; status: string }
+  ) => {
     const { data, error } = await client
       .from('posts')
-      .update({ content })
+      .update({ content: postData.content, title: postData.title, status: postData.status })
       .eq('id', id)
       .select()
       .single()
