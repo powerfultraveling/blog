@@ -68,8 +68,4 @@ const selectOption = (option: Option) => {
   emit('change', option.value)
   isOpen.value = false
 }
-
-// 點擊外部自動關閉
-const dropdownRef = ref(null)
-// onClickOutside(dropdownRef, () => (isOpen.value = false))
 </script>
