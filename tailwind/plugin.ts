@@ -7,7 +7,16 @@ export const button = plugin(({ addUtilities }) => {
         {}
     },
     '.btn-block': {
-      '@apply w-full':  {}
+      '@apply w-full': {}
+    },
+    '.btn-info': {
+      '@apply text-white bg-info border-info hover:bg-info-light': {}
+    },
+    '.btn-black': {
+      '@apply text-white bg-black border-black hover:bg-black-light': {}
+    },
+    '.btn-black-outline': {
+      '@apply text-black border-black hover:bg-black-light': {}
     }
   })
 

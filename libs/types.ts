@@ -16,3 +16,8 @@ export interface ProjectItem {
   projectLink?: string
   articleLink?: string
 }
+
+export interface Option {
+  value: string | number
+  label: string
+}
