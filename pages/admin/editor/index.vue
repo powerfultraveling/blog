@@ -27,7 +27,7 @@ const mappedPosts = computed(
   () =>
     posts.value?.map((post) => ({
       title: post.title,
-      to: `/editor/${post.id}`
+      to: `/admin/editor/${post.id}`
     })) ?? []
 )
 </script>
