@@ -9,7 +9,7 @@
 
 <style scoped>
 .title {
-  @apply px-6 py-4 bg-primary border border-black text-6xl relative z-20 md:text-[50px];
+  @apply px-6 py-4 bg-primary border border-black text-6xl relative z-20;
 }
 
 .moving-block {
