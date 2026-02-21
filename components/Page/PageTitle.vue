@@ -17,7 +17,7 @@ defineProps<Props>()
 
 <style scoped>
 .title {
-  @apply px-6 py-4 bg-primary border border-black text-6xl relative z-20 md:text-[50px] font-serif;
+  @apply px-6 py-4 bg-primary border border-black text-6xl relative z-20 md:text-[30px] font-serif;
 }
 
 .moving-block {
