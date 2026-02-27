@@ -17,6 +17,12 @@ export interface ProjectItem {
   articleLink?: string
 }
 
+export interface PostCategory {
+  id: string
+  name: string
+  slug: string
+}
+
 export interface Option {
   value: string | number
   label: string
@@ -25,13 +31,13 @@ export interface Option {
 export interface Post {
   id: string
   title: string
-  content: string
-  created_at: string
-  updated_at: string
-  status: string
+  content: string | null
+  created_at: string | null
+  status: string | null
   post_category_id: string
-  profile_id: string
-  published_at: string
-  deleted_at: string
-  subtitle: string
+  profile_id: string | null
+  published_at: string | null
+  deleted_at: string | null
+  subtitle: string | null
+  post_categories?: { name: string; id: string } | null
 }
