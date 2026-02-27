@@ -23,11 +23,23 @@ export const useAddNewPost = () => {
 
   const handleSavePost = async (
     id: string,
-    postData: { title: string; content: string; status: string }
+    postData: {
+      title: string
+      content: string
+      status: string
+      cover_image_path?: string | null
+    }
   ) => {
     const { data, error } = await client
       .from('posts')
-      .update({ content: postData.content, title: postData.title, status: postData.status })
+      .update({
+        content: postData.content,
+        title: postData.title,
+        status: postData.status,
+        ...(postData.cover_image_path !== undefined && {
+          cover_image_path: postData.cover_image_path
+        })
+      })
       .eq('id', id)
       .select()
       .single()

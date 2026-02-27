@@ -6,6 +6,7 @@
         @save="handleSave"
         @change-title="handleChangeTitle"
         @change-status="handleChangeStatus"
+        @change-cover-image="handleChangeCoverImage"
       />
       <v-md-editor
         :model-value="props.postData.content"
@@ -19,12 +20,11 @@
 </template>
 
 <script setup lang="ts">
-import { Post } from '@/libs/types'
+import { EditorPost } from '@/libs/types'
 import { useUploadImage } from '@/composables/editor/uploadImage'
 const { handleUploadImage } = useUploadImage()
 const props = defineProps<{
-  postData: Post
-  content: string
+  postData: EditorPost
   id: string
 }>()
 
@@ -33,6 +33,7 @@ const emit = defineEmits<{
   (e: 'save'): void
   (e: 'changeTitle', text: string): void
   (e: 'changeStatus', status: string): void
+  (e: 'changeCoverImage', path: string | null): void
 }>()
 
 const handleChange = (text: string) => {
@@ -49,5 +50,9 @@ const handleChangeTitle = (text: string) => {
 
 const handleChangeStatus = (status: string) => {
   emit('changeStatus', status)
+}
+
+const handleChangeCoverImage = (path: string | null) => {
+  emit('changeCoverImage', path)
 }
 </script>

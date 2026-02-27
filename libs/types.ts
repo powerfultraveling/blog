@@ -39,5 +39,20 @@ export interface Post {
   published_at: string | null
   deleted_at: string | null
   subtitle: string | null
+  cover_image_path: string | null
   post_categories?: { name: string; id: string } | null
+}
+
+export interface EditorPost {
+  id: string
+  title: string
+  content: string
+  created_at: string | null
+  status: string | null
+  post_category_id: string
+  profile_id: string | null
+  published_at: string | null
+  deleted_at: string | null
+  subtitle: string | null
+  cover_image_path: string | null
 }
