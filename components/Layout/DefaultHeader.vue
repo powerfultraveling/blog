@@ -33,10 +33,10 @@ router.beforeEach((_, __, next) => {
 }
 
 .menu {
-  @apply absolute opacity-0 z-30 h-0;
+  @apply absolute opacity-0 z-30 h-0 overflow-hidden;
 
   &.opened {
-    @apply opacity-[96%] h-screen;
+    @apply opacity-[96%] h-screen overflow-auto;
   }
 }
 </style>

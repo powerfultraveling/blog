@@ -1,6 +1,6 @@
 <template>
   <div v-if="post">
-    <Article :title="post.title" :content="postContent" />
+    <Article :title="post.title" :content="postContent" :cover-image="coverImage" />
   </div>
 </template>
 
@@ -26,5 +26,11 @@ console.log(post)
 const postContent = computed(() => {
   if (!post.value) return ''
   return md.render(post.value.content)
+})
+
+const coverImage = computed(() => {
+  if (!post.value) return null
+  const { data } = client.storage.from('images').getPublicUrl(post.value.cover_image_path)
+  return data.publicUrl
 })
 </script>

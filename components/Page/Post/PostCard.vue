@@ -46,6 +46,7 @@ interface Props {
 const props = defineProps<Props>()
 
 // 格式化日期為 2026年2月27日 格式
+// TODO: 這邊要改為 dayjs
 const formattedDate = computed(() => {
   const d = new Date(props.date)
   return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`
