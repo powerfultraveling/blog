@@ -1,14 +1,14 @@
 .article {
   h1 {
-    @apply text-6xl mb-5 pt-10  !important;
+    @apply text-6xl mb-5 pt-20  !important;
   }
 
   h2 {
-    @apply text-5xl mb-2 pt-4 font-serif font-medium;
+    @apply text-5xl mb-2 pt-8 !font-bold;
   }
 
   h3 {
-    @apply text-3xl mb-2 pt-3 font-serif font-medium;
+    @apply text-3xl mb-2 pt-3 font-medium italic;
   }
 
   p {
