@@ -8,6 +8,7 @@ export const useUploadImage = () => {
    * @param files 檔案列表
    */
   const handleUploadImage = async (event: Event, insertImage: Function, files: File[]) => {
+    alert('uploadImage')
     const file = files[0]
     if (!file) return
 

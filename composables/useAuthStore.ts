@@ -22,6 +22,7 @@ export const useAuthStore = () => {
   }
 
   const logout = async (options?: { redirectTo?: string }) => {
+    alert('logout')
     authError.value = null
     await supabase.auth.signOut()
     if (options?.redirectTo) {

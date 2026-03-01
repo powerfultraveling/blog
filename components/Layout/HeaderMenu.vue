@@ -10,7 +10,9 @@
         </div>
       </PLink>
       <div class="pt-10 flex justify-center pl-5">
-        <button v-if="isLoggedIn" class="text-center btn" @click="handleLogout">Logout</button>
+        <div v-if="isLoggedIn" class="text-center btn" type="button" @click="handleLogout">
+          Logout
+        </div>
       </div>
       <!-- TODO: Added the i18n in the future -->
       <!-- <div class="flex items-center space-x-4 pl-5 font-serif text-gray-dark">
@@ -51,6 +53,7 @@ const links = [
 ]
 
 const handleLogout = async () => {
+  alert('handleLogout')
   await logout()
 
   await navigateTo('/')

@@ -8,13 +8,13 @@
       />
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
         <PostCard
-          v-for="{ title, to, category } in filteredPosts"
+          v-for="{ title, to, category, coverImage, date } in filteredPosts"
           :key="to"
           :title="title"
           :to="to"
           :category="category?.name ?? ''"
-          :image="coverImage"
-          :date="'2026-02-27'"
+          :image="coverImage ?? defaultCoverImage"
+          :date="date"
         />
       </div>
     </div>
@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import { ALL_VALUE } from '@/libs/const'
-import coverImage from '@/assets/images/home/osaka.jpeg'
+import defaultCoverImage from '@/assets/images/home/osaka.jpeg'
 import { Post } from '@/libs/types'
 
 interface Props {
@@ -34,7 +34,6 @@ interface Props {
 const props = defineProps<Props>()
 
 const selectedCategory = ref<string>(ALL_VALUE)
-
 const categoryOptions = computed(() => {
   const options =
     props.categories?.map((category) => ({
@@ -50,12 +49,20 @@ const categoryOptions = computed(() => {
   return [defaultOption, ...options]
 })
 
+const client = useAppSupabase()
+function getCoverImage(imagePath: string | null) {
+  if (!imagePath) return null
+  const { data } = client.storage.from('images').getPublicUrl(imagePath)
+  return data.publicUrl
+}
 const mappedPosts = computed(
   () =>
     props.posts?.map((post) => ({
       title: post.title,
       to: `/posts/${post.id}`,
-      category: post.post_categories
+      category: post.post_categories,
+      coverImage: getCoverImage(post.cover_image_path),
+      date: post.published_at ?? post.created_at ?? ''
     })) ?? []
 )
 
