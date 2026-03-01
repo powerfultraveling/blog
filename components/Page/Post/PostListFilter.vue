@@ -5,8 +5,7 @@
       :key="category.value"
       class="btn bg-primary hover:bg-[#81bce8] rounded-none"
       :class="{
-        '!bg-secondary-light text-white !border-secondary-light':
-          selectedCategory === category.value
+        'bg-secondary-light text-white !border-secondary-light': selectedCategory === category.value
       }"
       @click="handleChange(category.value as string)"
     >

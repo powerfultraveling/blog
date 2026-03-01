@@ -3,8 +3,7 @@ import plugin from 'tailwindcss/plugin'
 export const button = plugin(({ addUtilities }) => {
   addUtilities({
     '.btn': {
-      '@apply px-2 py-1 border border-gray-darkest bg-white hoverable rounded-md hover:bg-gray-light':
-        {}
+      '@apply px-2 py-1 border border-gray-darkest  hoverable': {}
     },
     '.btn-block': {
       '@apply w-full': {}
