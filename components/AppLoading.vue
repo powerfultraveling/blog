@@ -9,7 +9,7 @@
         <div
           class="w-10 h-10 rounded-full border-2 border-slate-300 border-t-slate-700 animate-spin"
         />
-        <span class="text-sm text-slate-500">載入中...</span>
+        <span class="text-sm text-slate-500">Loading...</span>
       </div>
     </div>
   </Transition>
