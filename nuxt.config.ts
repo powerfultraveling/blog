@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: '蔡恂藝部落格',
-      meta: [{ name: 'description', content: '蔡恂藝的個人網站' }]
+      meta: [{ name: 'description', content: '蔡恂藝的個人網站' }],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     }
   },
   nitro: {
