@@ -239,6 +239,7 @@ export type Database = {
       posts: {
         Row: {
           content: string | null
+          cover_image_path: string | null
           created_at: string | null
           deleted_at: string | null
           id: string
@@ -251,6 +252,7 @@ export type Database = {
         }
         Insert: {
           content?: string | null
+          cover_image_path?: string | null
           created_at?: string | null
           deleted_at?: string | null
           id?: string
@@ -263,6 +265,7 @@ export type Database = {
         }
         Update: {
           content?: string | null
+          cover_image_path?: string | null
           created_at?: string | null
           deleted_at?: string | null
           id?: string
