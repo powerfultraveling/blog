@@ -2,14 +2,12 @@
   <Transition name="app-loading">
     <div
       v-if="visible"
-      class="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-100"
+      class="fixed inset-0 z-[9999] flex items-center justify-center bg-primary"
       aria-hidden="true"
     >
       <div class="flex flex-col items-center gap-4">
-        <div
-          class="w-10 h-10 rounded-full border-2 border-slate-300 border-t-slate-700 animate-spin"
-        />
-        <span class="text-sm text-slate-500">Loading...</span>
+        <div class="loading-bounce" />
+        <!-- <span class="text-sm text-slate-500">Loading...</span> -->
       </div>
     </div>
   </Transition>
@@ -22,6 +20,25 @@ defineProps<{
 </script>
 
 <style scoped>
+.loading-bounce {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #80c3c6;
+  animation: bounce 1.2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-0.5rem) scale(1.05);
+  }
+}
+
 .app-loading-enter-active,
 .app-loading-leave-active {
   transition: opacity 0.25s ease;
