@@ -1,9 +1,11 @@
 <template>
-  <div class="relative lg:h-[800px] overflow-hidden gallery-carousel">
+  <div
+    class="relative w-full min-h-[200px] md:min-h-[160px] lg:h-[800px] lg:min-h-0 overflow-hidden gallery-carousel"
+  >
     <PSwiper :slides="slides" :options="options">
       <template #default="{ slide }">
         <div
-          class="md:w-32 aspect-square bg-gray-200 rounded-2xl overflow-hidden shadow-sm relative"
+          class="w-24 h-24 md:w-32 md:h-32 shrink-0 rounded-2xl overflow-hidden shadow-sm relative bg-gray-200"
         >
           <a :href="slide.link" target="_blank" class="block w-full h-full relative group">
             <img :src="slide.image" alt="sidebar-item" class="w-full h-full object-cover" />
