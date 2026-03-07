@@ -11,5 +11,7 @@ export const PAGE_LINK = {
   ABOUT: '/about',
   POSTS: '/posts',
   PROJECTS: '/projects',
-  EDITOR: '/admin/editor'
+  EDITOR: '/admin/editor',
+  ADMIN_HOME: '/admin',
+  ADMIN_POSTS: '/admin/posts'
 }

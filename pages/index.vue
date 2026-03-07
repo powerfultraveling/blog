@@ -1,9 +1,6 @@
 <template>
   <div class="pb-10">
-    <!-- <HomeAbout /> -->
     <HomeMainVisual />
-    <!-- <HomeHero /> -->
-    <!-- <HomeProjects /> -->
   </div>
 </template>
 
