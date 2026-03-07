@@ -6,18 +6,13 @@
 </template>
 
 <script lang="ts" setup>
-const client = useAppSupabase()
+const { postsService, postsCategoriesService } = useServices()
 
 const { data: categoriesData } = await useAsyncData('categories', async () => {
-  const { data } = await client.from('post_categories').select('*')
-  return data ?? []
+  return await postsCategoriesService.getAllCategories()
 })
 
 const { data: posts } = await useAsyncData('posts', async () => {
-  const { data } = await client
-    .from('posts')
-    .select('*,post_categories(name,id)')
-    .eq('status', 'published')
-  return data
+  return await postsService.getAllPublishedPosts()
 })
 </script>

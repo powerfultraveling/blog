@@ -1,23 +1,24 @@
 export const useAddNewPost = () => {
-  const client = useAppSupabase()
+  const { postsService } = useServices()
 
   const handleNewPost = async () => {
-    const { data, error } = await client
-      .from('posts')
-      .insert({
-        title: '新文章',
-        content: '',
-        post_category_id: '1c9e3bcc-b890-4d1e-b57a-190670b6d21a',
-        status: 'draft'
-      })
-      .select()
-      .single()
+    // TODO: this need refactor in future
+    const DEFAULT_POST_CATEGORY_ID = '1c9e3bcc-b890-4d1e-b57a-190670b6d21a'
+    const DEFAULT_STATUS = 'draft'
+    const DEFAULT_TITLE = '新文章'
+
+    const { data, error } = await postsService.createPost({
+      title: DEFAULT_TITLE,
+      content: '',
+      post_category_id: DEFAULT_POST_CATEGORY_ID,
+      status: DEFAULT_STATUS
+    })
 
     if (error) {
       console.error(error)
     } else {
       console.log(data)
-      navigateTo(`/editor/${data.id}`)
+      navigateTo(`/admin/editor/${data.id}`)
     }
   }
 
@@ -30,19 +31,14 @@ export const useAddNewPost = () => {
       cover_image_path?: string | null
     }
   ) => {
-    const { data, error } = await client
-      .from('posts')
-      .update({
-        content: postData.content,
-        title: postData.title,
-        status: postData.status,
-        ...(postData.cover_image_path !== undefined && {
-          cover_image_path: postData.cover_image_path
-        })
+    const { data, error } = await postsService.updatePost(id, {
+      content: postData.content,
+      title: postData.title,
+      status: postData.status,
+      ...(postData.cover_image_path !== undefined && {
+        cover_image_path: postData.cover_image_path
       })
-      .eq('id', id)
-      .select()
-      .single()
+    })
 
     if (error) {
       console.error(error)

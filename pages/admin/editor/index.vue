@@ -14,13 +14,14 @@
 
 <script lang="ts" setup>
 import { useAddNewPost } from '@/composables/editor/useAddNewPost'
+import { useServices } from '~/composables/useServices'
 
-const client = useAppSupabase()
+const { postsService } = useServices()
+
 const { handleNewPost } = useAddNewPost()
 
 const { data: posts } = await useAsyncData('posts', async () => {
-  const { data } = await client.from('posts').select('*')
-  return data
+  return await postsService.getAllPosts()
 })
 
 const mappedPosts = computed(
