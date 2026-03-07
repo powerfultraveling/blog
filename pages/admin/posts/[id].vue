@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="mb-4 container pt-4">
+      <SBackBtn :to="PAGE_LINK.ADMIN_POSTS">文章列表</SBackBtn>
+    </div>
     <div v-if="postData">
       <Editor
         :id="id"
@@ -19,6 +22,7 @@
 import { useRoute } from 'vue-router'
 import { useAddNewPost } from '@/composables/editor/useAddNewPost'
 import { EditorPost } from '@/libs/types'
+import { PAGE_LINK } from '~/libs/const'
 
 const route = useRoute()
 const id = route.params.id as string
