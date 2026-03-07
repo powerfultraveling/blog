@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     head: {
       title: '蔡恂藝部落格',
       meta: [{ name: 'description', content: '蔡恂藝的個人網站' }],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }]
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
     }
   },
   nitro: {
