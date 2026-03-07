@@ -2,8 +2,11 @@
   <div class="pt-10">
     <PageTitleWithLayout title="文章管理" />
     <div class="container">
-      <div>
-        <button @click="handleNewPost">新增文章</button>
+      <div class="flex items-center justify-between">
+        <div>
+          <SBackBtn :to="PAGE_LINK.ADMIN_HOME">後台管理首頁</SBackBtn>
+        </div>
+        <button class="btn" @click="handleNewPost">新增文章</button>
       </div>
       <div>
         <ListLink v-for="{ title, to } in mappedPosts" :key="to" :title="title" :to="to" />
@@ -15,9 +18,9 @@
 <script lang="ts" setup>
 import { useAddNewPost } from '@/composables/editor/useAddNewPost'
 import { useServices } from '~/composables/useServices'
+import { PAGE_LINK } from '~/libs/const'
 
 const { postsService } = useServices()
-
 const { handleNewPost } = useAddNewPost()
 
 const { data: posts } = await useAsyncData('posts', async () => {
@@ -28,7 +31,7 @@ const mappedPosts = computed(
   () =>
     posts.value?.map((post) => ({
       title: post.title,
-      to: `/admin/editor/${post.id}`
+      to: `/admin/posts/${post.id}`
     })) ?? []
 )
 </script>

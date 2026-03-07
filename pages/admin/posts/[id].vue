@@ -6,6 +6,7 @@
         :post-data="postData"
         @change="handleChange"
         @save="handleSave"
+        @delete="handleDelete"
         @change-title="handleChangeTitle"
         @change-status="handleChangeStatus"
         @change-cover-image="handleChangeCoverImage"
@@ -23,7 +24,7 @@ const route = useRoute()
 const id = route.params.id as string
 const postData = ref<EditorPost | null>(null)
 const client = useAppSupabase()
-const { handleSavePost } = useAddNewPost()
+const { handleSavePost, handleDeletePost } = useAddNewPost()
 
 const { data: post } = await useAsyncData('post', async () => {
   const { data } = await client.from('posts').select('*').eq('id', id).single()
@@ -57,6 +58,10 @@ const handleSave = async () => {
     status: postData.value?.status ?? '',
     cover_image_path: postData.value?.cover_image_path ?? null
   })
+}
+
+const handleDelete = async () => {
+  await handleDeletePost(id.toString())
 }
 
 const handleChangeTitle = (text: string) => {
