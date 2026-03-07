@@ -34,23 +34,40 @@
 
 <script lang="ts" setup>
 import { useAuthStore } from '@/composables/useAuthStore'
+import { PAGE_LINK } from '~/libs/const'
 
 const { isLoggedIn, logout } = useAuthStore()
 
-const links = [
+const baseLinks = [
   {
     label: '關於我',
-    to: '/about'
+    to: PAGE_LINK.ABOUT
   },
   {
     label: '文章列表',
-    to: '/posts'
+    to: PAGE_LINK.POSTS
   },
   {
     label: '作品集',
-    to: '/projects'
+    to: PAGE_LINK.PROJECTS
   }
 ]
+
+const adminLinks = [
+  ...baseLinks,
+  {
+    label: '後台管理',
+    to: PAGE_LINK.ADMIN_HOME
+  },
+  {
+    label: '文章管理',
+    to: PAGE_LINK.ADMIN_POSTS
+  }
+]
+
+const links = computed(() => {
+  return isLoggedIn.value ? adminLinks : baseLinks
+})
 
 const handleLogout = async () => {
   alert('handleLogout')

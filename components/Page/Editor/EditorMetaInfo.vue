@@ -10,7 +10,12 @@
           @change="handleChangeStatus"
         />
       </div>
-      <button class="btn btn-info" @click="handleSave">SAVE</button>
+      <div class="flex items-center gap-2">
+        <button class="btn btn-info" @click="handleSave">SAVE</button>
+        <button type="button" class="btn btn-sm btn-error btn-outline" @click="handleDelete">
+          刪除
+        </button>
+      </div>
     </div>
 
     <!-- Cover image: native file picker + preview -->
@@ -60,6 +65,7 @@ const options = ref<Option[]>([
 
 const emit = defineEmits<{
   (e: 'save'): void
+  (e: 'delete'): void
   (e: 'changeTitle', text: string): void
   (e: 'changeStatus', status: string): void
   (e: 'changeCoverImage', path: string | null): void
@@ -109,6 +115,11 @@ const handleRemoveCover = () => {
 
 const handleSave = () => {
   emit('save')
+}
+
+const handleDelete = () => {
+  if (!confirm('確定要刪除此文章？')) return
+  emit('delete')
 }
 
 const handleChangeTitle = (text: string) => {

@@ -4,6 +4,7 @@
       <EditorMetaInfo
         :post-data="props.postData"
         @save="handleSave"
+        @delete="handleDelete"
         @change-title="handleChangeTitle"
         @change-status="handleChangeStatus"
         @change-cover-image="handleChangeCoverImage"
@@ -31,6 +32,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'change', text: string): void
   (e: 'save'): void
+  (e: 'delete'): void
   (e: 'changeTitle', text: string): void
   (e: 'changeStatus', status: string): void
   (e: 'changeCoverImage', path: string | null): void
@@ -42,6 +44,10 @@ const handleChange = (text: string) => {
 
 const handleSave = async () => {
   emit('save')
+}
+
+const handleDelete = () => {
+  emit('delete')
 }
 
 const handleChangeTitle = (text: string) => {

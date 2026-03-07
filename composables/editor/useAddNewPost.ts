@@ -1,3 +1,5 @@
+import { PAGE_LINK } from '~/libs/const'
+
 export const useAddNewPost = () => {
   const { postsService } = useServices()
 
@@ -18,8 +20,13 @@ export const useAddNewPost = () => {
       console.error(error)
     } else {
       console.log(data)
-      navigateTo(`/admin/editor/${data.id}`)
+      navigateTo(`${PAGE_LINK.ADMIN_POSTS}/${data.id}`)
     }
+  }
+
+  const handleDeletePost = async (id: string) => {
+    await postsService.deletePost(id)
+    navigateTo(PAGE_LINK.ADMIN_POSTS)
   }
 
   const handleSavePost = async (
@@ -43,12 +50,13 @@ export const useAddNewPost = () => {
     if (error) {
       console.error(error)
     } else {
-      console.log(data)
+      alert('儲存成功')
     }
   }
 
   return {
     handleNewPost,
-    handleSavePost
+    handleSavePost,
+    handleDeletePost
   }
 }
