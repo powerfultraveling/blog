@@ -8,7 +8,7 @@
           class="border-b border-gray-800 py-2 flex items-center justify-center font-medium bg-[#81bce8]"
         >
           <div>編輯長：</div>
-          蔡恂藝
+          大力走步
         </div>
         <div class="flex items-center justify-center py-2">
           <div class="overflow-hidden rounded-full w-20 h-20">
