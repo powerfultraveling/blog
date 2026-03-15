@@ -35,6 +35,7 @@ export const useAddNewPost = () => {
       title: string
       content: string
       status: string
+      post_category_id: string
       cover_image_path?: string | null
     }
   ) => {
@@ -42,6 +43,7 @@ export const useAddNewPost = () => {
       content: postData.content,
       title: postData.title,
       status: postData.status,
+      post_category_id: postData.post_category_id,
       ...(postData.cover_image_path !== undefined && {
         cover_image_path: postData.cover_image_path
       })
