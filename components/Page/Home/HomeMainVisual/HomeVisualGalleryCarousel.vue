@@ -5,7 +5,7 @@
     <PSwiper :slides="slides" :options="options">
       <template #default="{ slide }">
         <div
-          class="w-24 h-24 md:w-32 md:h-32 shrink-0 rounded-2xl overflow-hidden shadow-sm relative bg-gray-200"
+          class="w-full max-w-24 md:w-24 md:h-24 shrink-0 rounded-2xl overflow-hidden shadow-sm relative bg-gray-200"
         >
           <a :href="slide.link" target="_blank" class="block w-full h-full relative group">
             <img :src="slide.image" alt="sidebar-item" class="w-full h-full object-cover" />
@@ -36,7 +36,7 @@ defineProps<Props>()
 
 const options = computed(() => ({
   direction: 'horizontal' as const,
-  slidesPerView: 2.3,
+  slidesPerView: 3,
   spaceBetween: 16,
   loop: false,
   // 核心修正：禁止越界拖動
@@ -92,5 +92,9 @@ const options = computed(() => ({
   &.active {
     @apply bg-black;
   }
+}
+
+:deep(.swiper-wrapper) {
+  @apply overflow-hidden !important;
 }
 </style>
