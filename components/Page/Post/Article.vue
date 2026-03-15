@@ -1,5 +1,5 @@
 <template>
-  <div class="container pb-10">
+  <div class="container pb-10 px-6">
     <div class="flex flex-col py-10 max-w-[700px] mx-auto">
       <div class="mb-10">
         <div class="mb-10">
