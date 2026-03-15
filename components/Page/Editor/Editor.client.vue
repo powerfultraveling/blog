@@ -7,6 +7,7 @@
         @delete="handleDelete"
         @change-title="handleChangeTitle"
         @change-status="handleChangeStatus"
+        @change-category="handleChangeCategory"
         @change-cover-image="handleChangeCoverImage"
       />
       <v-md-editor
@@ -35,6 +36,7 @@ const emit = defineEmits<{
   (e: 'delete'): void
   (e: 'changeTitle', text: string): void
   (e: 'changeStatus', status: string): void
+  (e: 'changeCategory', categoryId: string): void
   (e: 'changeCoverImage', path: string | null): void
 }>()
 
@@ -56,6 +58,10 @@ const handleChangeTitle = (text: string) => {
 
 const handleChangeStatus = (status: string) => {
   emit('changeStatus', status)
+}
+
+const handleChangeCategory = (categoryId: string) => {
+  emit('changeCategory', categoryId)
 }
 
 const handleChangeCoverImage = (path: string | null) => {

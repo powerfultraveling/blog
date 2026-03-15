@@ -12,6 +12,7 @@
         @delete="handleDelete"
         @change-title="handleChangeTitle"
         @change-status="handleChangeStatus"
+        @change-category="handleChangeCategory"
         @change-cover-image="handleChangeCoverImage"
       />
     </div>
@@ -60,6 +61,7 @@ const handleSave = async () => {
     title: postData.value?.title ?? '',
     content: postData.value?.content ?? '',
     status: postData.value?.status ?? '',
+    post_category_id: postData.value?.post_category_id ?? '',
     cover_image_path: postData.value?.cover_image_path ?? null
   })
 }
@@ -76,6 +78,11 @@ const handleChangeTitle = (text: string) => {
 const handleChangeStatus = (status: string) => {
   if (!postData.value) return
   postData.value = { ...postData.value, status }
+}
+
+const handleChangeCategory = (categoryId: string) => {
+  if (!postData.value) return
+  postData.value = { ...postData.value, post_category_id: categoryId }
 }
 
 const handleChangeCoverImage = (path: string | null) => {

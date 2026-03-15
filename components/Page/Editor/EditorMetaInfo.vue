@@ -9,6 +9,12 @@
           placeholder="選擇文章狀態"
           @change="handleChangeStatus"
         />
+        <SDropdown
+          :model-value="props.postData.post_category_id"
+          :options="categoryOptions"
+          placeholder="選擇分類"
+          @change="handleChangeCategory"
+        />
       </div>
       <div class="flex items-center gap-2">
         <button class="btn btn-info" @click="handleSave">SAVE</button>
@@ -50,7 +56,7 @@
 </template>
 
 <script setup lang="ts">
-import { Option, Post } from '@/libs/types'
+import { Option, Post, PostCategory } from '@/libs/types'
 
 const BUCKET = 'images'
 
@@ -68,10 +74,25 @@ const emit = defineEmits<{
   (e: 'delete'): void
   (e: 'changeTitle', text: string): void
   (e: 'changeStatus', status: string): void
+  (e: 'changeCategory', categoryId: string): void
   (e: 'changeCoverImage', path: string | null): void
 }>()
 
 const client = useAppSupabase()
+const { postsCategoriesService } = useServices()
+
+const categories = ref<PostCategory[]>([])
+const categoryOptions = computed<Option[]>(() =>
+  categories.value.map((c) => ({ value: c.id, label: c.name }))
+)
+
+onMounted(async () => {
+  try {
+    categories.value = await postsCategoriesService.getAllCategories()
+  } catch (e) {
+    console.error('Failed to load categories', e)
+  }
+})
 const coverFileInputRef = ref<HTMLInputElement | null>(null)
 
 // 預覽用：用 storage path 取得 public URL（僅顯示用，DB 存 path）
@@ -128,5 +149,9 @@ const handleChangeTitle = (text: string) => {
 
 const handleChangeStatus = (status: string) => {
   emit('changeStatus', status)
+}
+
+const handleChangeCategory = (categoryId: string) => {
+  emit('changeCategory', categoryId)
 }
 </script>
