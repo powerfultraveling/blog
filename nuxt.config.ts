@@ -4,8 +4,8 @@ import i18nConfig from './config/i18n'
 export default defineNuxtConfig({
   app: {
     head: {
-      title: '蔡恂藝部落格',
-      meta: [{ name: 'description', content: '蔡恂藝的個人網站' }],
+      title: "powerfultraveling's blog",
+      meta: [{ name: 'description', content: 'powerfultraveling 的個人網站' }],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
     }
   },

@@ -6,7 +6,7 @@
         <div class="profile-cover">黏貼處</div>
       </div>
       <div class="font-serif pl-4 border-l border-black">
-        <div class="text-5xl mb-5">蔡恂藝</div>
+        <div class="text-5xl mb-5">大力走步</div>
         <div class="w-full leading-8 md:w-100">
           前端工程師，大學讀法律和外文，誤打誤撞之下開始寫程式，目前有兩年前端開發經驗，擅長使用 Vue
           及相關技術開發，注重程式碼品質、熱愛分享。
