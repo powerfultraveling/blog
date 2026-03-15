@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full">
+  <div class="h-full swiper-wrapper">
     <slot
       name="controls"
       :slide-prev="slidePrev"

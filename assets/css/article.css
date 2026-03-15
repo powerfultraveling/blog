@@ -1,10 +1,10 @@
 .article {
   h1 {
-    @apply text-6xl mb-5 pt-20  !important;
+    @apply text-6xl mb-5 pt-20 font-bold !important;
   }
 
   h2 {
-    @apply text-5xl mb-2 pt-8 !font-bold;
+    @apply text-5xl mb-2 pt-8 !font-[600];
   }
 
   h3 {

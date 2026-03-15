@@ -28,7 +28,7 @@ const emits = defineEmits(['change'])
   }
 
   .stick-bottom {
-    @apply bottom-1;
+    @apply bottom-1 !h-[0.9px];
   }
 
   &:hover {
