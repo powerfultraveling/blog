@@ -2,14 +2,25 @@
   <div ref="dropdownRef" class="relative w-64">
     <button
       type="button"
-      class="w-full flex items-center justify-between px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+      class="w-full flex items-center justify-between px-4 py-2 bg-white border border-gray-900 shadow-sm hover:bg-gray-50 transition-all"
       @click="toggleDropdown"
     >
       <span :class="!modelValue ? 'text-gray-400' : 'text-gray-700'">
         {{ selectedLabel }}
       </span>
       <span class="ml-2 text-gray-400 transition-transform" :class="{ 'rotate-180': isOpen }">
-        ▼
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.23 7.21a.75.75 0 011.06.02L10 11.584l3.71-4.353a.75.75 0 111.14.976l-4 4.686a.75.75 0 01-1.14 0l-4-4.686a.75.75 0 01.02-1.06z"
+            clip-rule="evenodd"
+          />
+        </svg>
       </span>
     </button>
 
@@ -23,13 +34,13 @@
     >
       <ul
         v-if="isOpen"
-        class="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-auto focus:outline-none"
+        class="absolute z-10 w-full mt-1 bg-white border border-gray-900 shadow-lg max-h-60 overflow-auto focus:outline-none"
       >
         <li
           v-for="option in options"
           :key="option.value"
-          class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-indigo-600 hover:text-white transition-colors"
-          :class="{ 'bg-indigo-50 text-indigo-700': option.value === modelValue }"
+          class="px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-[#b6d3ea] transition-colors"
+          :class="{ 'bg-secondary-light text-white': option.value === modelValue }"
           @click="selectOption(option)"
         >
           {{ option.label }}
@@ -47,7 +58,7 @@ interface Option {
 
 const props = defineProps<{
   options: Option[]
-  modelValue: string | number | null
+  modelValue?: string | number | null
   placeholder?: string
 }>()
 

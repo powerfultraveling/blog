@@ -86,7 +86,8 @@ module.exports = {
         },
         secondary: {
           DEFAULT: '#0070BC',
-          light: '#81bce8'
+          light: '#81bce8',
+          lighter: '#b6d3ea'
         },
         danger: {
           light: '#ffebee',
