@@ -19,7 +19,6 @@ export const useAddNewPost = () => {
     if (error) {
       console.error(error)
     } else {
-      console.log(data)
       navigateTo(`${PAGE_LINK.ADMIN_POSTS}/${data.id}`)
     }
   }
@@ -33,15 +32,17 @@ export const useAddNewPost = () => {
     id: string,
     postData: {
       title: string
+      subtitle?: string | null
       content: string
       status: string
       post_category_id: string
       cover_image_path?: string | null
     }
   ) => {
-    const { data, error } = await postsService.updatePost(id, {
+    const { error } = await postsService.updatePost(id, {
       content: postData.content,
       title: postData.title,
+      subtitle: postData.subtitle ?? null,
       status: postData.status,
       post_category_id: postData.post_category_id,
       ...(postData.cover_image_path !== undefined && {

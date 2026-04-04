@@ -11,6 +11,7 @@
         @save="handleSave"
         @delete="handleDelete"
         @change-title="handleChangeTitle"
+        @change-subtitle="handleChangeSubtitle"
         @change-status="handleChangeStatus"
         @change-category="handleChangeCategory"
         @change-cover-image="handleChangeCoverImage"
@@ -47,6 +48,7 @@ postData.value = raw
   ? {
       ...raw,
       content: raw.content ?? '',
+      subtitle: raw.subtitle ?? null,
       cover_image_path: raw.cover_image_path ?? null
     }
   : null
@@ -59,6 +61,7 @@ const handleChange = (text: string) => {
 const handleSave = async () => {
   await handleSavePost(id.toString(), {
     title: postData.value?.title ?? '',
+    subtitle: postData.value?.subtitle ?? null,
     content: postData.value?.content ?? '',
     status: postData.value?.status ?? '',
     post_category_id: postData.value?.post_category_id ?? '',
@@ -73,6 +76,11 @@ const handleDelete = async () => {
 const handleChangeTitle = (text: string) => {
   if (!postData.value) return
   postData.value = { ...postData.value, title: text }
+}
+
+const handleChangeSubtitle = (text: string) => {
+  if (!postData.value) return
+  postData.value = { ...postData.value, subtitle: text || null }
 }
 
 const handleChangeStatus = (status: string) => {

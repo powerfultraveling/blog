@@ -1,21 +1,35 @@
 <template>
   <div class="mb-4 space-y-3">
     <div class="flex justify-between items-center">
-      <div class="flex items-center gap-2">
-        <SInput :value="props.postData.title" placeholder="文章標題" @change="handleChangeTitle" />
-        <SDropdown
-          :model-value="props.postData.status"
-          :options="options"
-          placeholder="選擇文章狀態"
-          @change="handleChangeStatus"
-        />
-        <SDropdown
-          :model-value="props.postData.post_category_id"
-          :options="categoryOptions"
-          placeholder="選擇分類"
-          @change="handleChangeCategory"
-        />
+      <div class="space-y-4">
+        <div class="flex gap-2">
+          <SInput
+            :value="props.postData.title"
+            placeholder="文章標題"
+            @change="handleChangeTitle"
+          />
+          <SInput
+            :value="props.postData.subtitle ?? ''"
+            placeholder="副標題"
+            @change="handleChangeSubtitle"
+          />
+        </div>
+        <div class="flex items-center gap-2">
+          <SDropdown
+            :model-value="props.postData.status"
+            :options="options"
+            placeholder="選擇文章狀態"
+            @change="handleChangeStatus"
+          />
+          <SDropdown
+            :model-value="props.postData.post_category_id"
+            :options="categoryOptions"
+            placeholder="選擇分類"
+            @change="handleChangeCategory"
+          />
+        </div>
       </div>
+
       <div class="flex items-center gap-2">
         <button class="btn btn-info" @click="handleSave">SAVE</button>
         <button type="button" class="btn btn-sm btn-error btn-outline" @click="handleDelete">
@@ -73,6 +87,7 @@ const emit = defineEmits<{
   (e: 'save'): void
   (e: 'delete'): void
   (e: 'changeTitle', text: string): void
+  (e: 'changeSubtitle', text: string): void
   (e: 'changeStatus', status: string): void
   (e: 'changeCategory', categoryId: string): void
   (e: 'changeCoverImage', path: string | null): void
@@ -145,6 +160,10 @@ const handleDelete = () => {
 
 const handleChangeTitle = (text: string) => {
   emit('changeTitle', text)
+}
+
+const handleChangeSubtitle = (text: string) => {
+  emit('changeSubtitle', text)
 }
 
 const handleChangeStatus = (status: string) => {

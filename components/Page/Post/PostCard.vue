@@ -19,7 +19,8 @@
         <h2 class="text- leading-tight text-black font-bold md:text-3xl">
           {{ title }}
         </h2>
-        <p v-if="subtitle" class="text-[24px] font-bold leading-tight text-black mt-1">
+
+        <p v-if="subtitle" class="text-lg font-medium leading-tight text-gray-500 mt-2">
           {{ subtitle }}
         </p>
       </div>

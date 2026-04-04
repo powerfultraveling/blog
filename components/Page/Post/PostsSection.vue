@@ -8,9 +8,10 @@
       />
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
         <PostCard
-          v-for="{ title, to, category, coverImage, date } in filteredPosts"
+          v-for="{ title, to, category, coverImage, date, subtitle } in filteredPosts"
           :key="to"
           :title="title"
+          :subtitle="subtitle ?? ''"
           :to="to"
           :category="category?.name ?? ''"
           :image="coverImage ?? defaultCoverImage"
@@ -62,7 +63,8 @@ const mappedPosts = computed(
       to: `/posts/${post.id}`,
       category: post.post_categories,
       coverImage: getCoverImage(post.cover_image_path),
-      date: post.published_at ?? post.created_at ?? ''
+      date: post.published_at ?? post.created_at ?? '',
+      subtitle: post.subtitle ?? ''
     })) ?? []
 )
 
