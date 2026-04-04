@@ -6,6 +6,7 @@
         @save="handleSave"
         @delete="handleDelete"
         @change-title="handleChangeTitle"
+        @change-subtitle="handleChangeSubtitle"
         @change-status="handleChangeStatus"
         @change-category="handleChangeCategory"
         @change-cover-image="handleChangeCoverImage"
@@ -35,6 +36,7 @@ const emit = defineEmits<{
   (e: 'save'): void
   (e: 'delete'): void
   (e: 'changeTitle', text: string): void
+  (e: 'changeSubtitle', text: string): void
   (e: 'changeStatus', status: string): void
   (e: 'changeCategory', categoryId: string): void
   (e: 'changeCoverImage', path: string | null): void
@@ -54,6 +56,10 @@ const handleDelete = () => {
 
 const handleChangeTitle = (text: string) => {
   emit('changeTitle', text)
+}
+
+const handleChangeSubtitle = (text: string) => {
+  emit('changeSubtitle', text)
 }
 
 const handleChangeStatus = (status: string) => {
