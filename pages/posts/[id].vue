@@ -12,12 +12,11 @@
 
 <script setup>
 import { useRoute } from 'vue-router'
-import MarkdownIt from 'markdown-it'
 import { formatDate } from '@/utils/helpers'
+import { renderArticleMarkdown } from '@/utils/articleMarkdown'
 
 const route = useRoute()
 const id = route.params.id
-const md = new MarkdownIt()
 
 const client = useAppSupabase()
 
@@ -35,7 +34,7 @@ console.log(post)
 
 const postContent = computed(() => {
   if (!post.value) return ''
-  return md.render(post.value.content)
+  return renderArticleMarkdown(post.value.content)
 })
 
 const coverImage = computed(() => {
