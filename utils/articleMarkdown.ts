@@ -5,7 +5,7 @@ import markdownItAttrs from 'markdown-it-attrs'
 export const articleMarkdown = new MarkdownIt().use(markdownItAttrs, {
   leftDelimiter: '{{{',
   rightDelimiter: '}}}',
-  allowedAttributes: ['width', 'height'],
+  allowedAttributes: ['width', 'height']
 })
 
 export function renderArticleMarkdown(text: string) {
