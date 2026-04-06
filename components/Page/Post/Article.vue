@@ -22,12 +22,15 @@
           class="w-full aspect-[16/9] object-contain"
         />
       </div>
+      <ArticleTableOfContent :toc="props.toc" @headingClick="scrollToHeading" />
       <div class="article" v-html="props.content"></div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { ArticleTocItem } from '@/utils/articleMarkdown'
+
 interface Props {
   title: string
   content: string
@@ -36,7 +39,20 @@ interface Props {
   category: string
   isAdmin: boolean
   linkToEdit: string
+  toc?: ArticleTocItem[]
 }
 
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  toc: () => []
+})
+
+function scrollToHeading(id: string) {
+  const el = document.getElementById(id)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+  if (import.meta.client) {
+    history.replaceState(null, '', `#${id}`)
+  }
+}
 </script>
