@@ -6,6 +6,8 @@
       :cover-image="coverImage"
       :date="formattedDate"
       :category="post.post_categories?.name ?? ''"
+      :is-admin="isLoggedIn"
+      :link-to-edit="linkToEdit"
     />
   </div>
 </template>
@@ -14,6 +16,10 @@
 import { useRoute } from 'vue-router'
 import { formatDate } from '@/utils/helpers'
 import { renderArticleMarkdown } from '@/utils/articleMarkdown'
+import { useAuthStore } from '@/composables/useAuthStore'
+import { PAGE_LINK } from '~/libs/const'
+
+const { isLoggedIn } = useAuthStore()
 
 const route = useRoute()
 const id = route.params.id
@@ -26,15 +32,18 @@ const { data: post } = await useAsyncData('post', async () => {
     .select('*,post_categories(name)')
     .eq('id', id)
     .single()
-  console.log(data)
+
   return data
 })
-
-console.log(post)
 
 const postContent = computed(() => {
   if (!post.value) return ''
   return renderArticleMarkdown(post.value.content)
+})
+
+const linkToEdit = computed(() => {
+  if (!post.value) return ''
+  return `${PAGE_LINK.ADMIN_POSTS}/${post.value.id}`
 })
 
 const coverImage = computed(() => {

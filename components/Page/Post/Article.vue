@@ -3,7 +3,10 @@
     <div class="flex flex-col py-10 max-w-[700px] mx-auto">
       <div class="mb-10">
         <div class="mb-10">
-          <h1 class="text-8xl font-serif mb-5">{{ props.title }}</h1>
+          <div class="flex items-center justify-between">
+            <h1 class="text-8xl font-serif mb-5">{{ props.title }}</h1>
+            <PLink v-if="props.isAdmin" :to="props.linkToEdit" class="btn">編輯</PLink>
+          </div>
           <div class="flex items-center gap-2">
             <span class="text-sm text-gray-500">
               {{ props.date }}
@@ -31,6 +34,8 @@ interface Props {
   coverImage: string
   date: string
   category: string
+  isAdmin: boolean
+  linkToEdit: string
 }
 
 const props = defineProps<Props>()
