@@ -2,7 +2,8 @@
   <div v-if="post">
     <Article
       :title="post.title"
-      :content="postContent"
+      :content="rendered.html"
+      :toc="rendered.toc"
       :cover-image="coverImage"
       :date="formattedDate"
       :category="post.post_categories?.name ?? ''"
@@ -36,8 +37,10 @@ const { data: post } = await useAsyncData('post', async () => {
   return data
 })
 
-const postContent = computed(() => {
-  if (!post.value) return ''
+console.log(post)
+
+const rendered = computed(() => {
+  if (!post.value?.content) return { html: '', toc: [] }
   return renderArticleMarkdown(post.value.content)
 })
 
