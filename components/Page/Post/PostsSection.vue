@@ -58,14 +58,17 @@ function getCoverImage(imagePath: string | null) {
 }
 const mappedPosts = computed(
   () =>
-    props.posts?.map((post) => ({
-      title: post.title,
-      to: `/posts/${post.id}`,
-      category: post.post_categories,
-      coverImage: getCoverImage(post.cover_image_path),
-      date: post.published_at ?? post.created_at ?? '',
-      subtitle: post.subtitle ?? ''
-    })) ?? []
+    props.posts
+      ?.map((post) => ({
+        title: post.title,
+        to: `/posts/${post.id}`,
+        category: post.post_categories,
+        coverImage: getCoverImage(post.cover_image_path),
+        date: post.published_at ?? post.created_at ?? '',
+        createdAt: post.created_at ?? '',
+        subtitle: post.subtitle ?? ''
+      }))
+      .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()) ?? []
 )
 
 const filteredPosts = computed(() => {
