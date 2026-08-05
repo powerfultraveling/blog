@@ -25,3 +25,5 @@ logs
 
 # Stylelint cache
 .stylelintcache
+
+supabase/.temp/
