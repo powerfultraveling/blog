@@ -1,7 +1,7 @@
 <template>
   <div class="pt-10">
     <AboutTitle />
-    <AboutBrief />
+    <!-- <AboutBrief />  -->
     <AboutContent />
   </div>
 </template>
