@@ -8,7 +8,7 @@
       />
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
         <PostCard
-          v-for="{ title, to, category, coverImage, date, subtitle } in filteredPosts"
+          v-for="{ title, to, category, coverImage, date, subtitle } in paginatedPosts"
           :key="to"
           :title="title"
           :subtitle="subtitle ?? ''"
@@ -18,29 +18,41 @@
           :date="date"
         />
       </div>
+      <div></div>
+      <PostPagination v-model="currentPage" :total-pages="totalPages" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ALL_VALUE } from '@/libs/const'
+import { ALL_VALUE, OTHERS_CATEGORY_SLUG } from '@/libs/const'
 import defaultCoverImage from '@/assets/images/home/osaka.jpeg'
-import { Post } from '@/libs/types'
+import type { Post, PostCategory } from '@/libs/types'
+
+const PAGE_SIZE = 6
 
 interface Props {
-  categories: { name: string; id: string }[] | null
+  categories: PostCategory[] | null
   posts: Post[] | null
 }
 
 const props = defineProps<Props>()
+const route = useRoute()
+const router = useRouter()
 
 const selectedCategory = ref<string>(ALL_VALUE)
 const categoryOptions = computed(() => {
   const options =
-    props.categories?.map((category) => ({
-      label: category.name,
-      value: category.id
-    })) ?? []
+    [...(props.categories ?? [])]
+      .sort((a, b) => {
+        if (a.slug === OTHERS_CATEGORY_SLUG) return 1
+        if (b.slug === OTHERS_CATEGORY_SLUG) return -1
+        return 0
+      })
+      .map((category) => ({
+        label: category.name,
+        value: category.id
+      }))
 
   const defaultOption = {
     label: '所有文章',
@@ -81,7 +93,32 @@ const filteredPosts = computed(() => {
   })
 })
 
+const totalPages = computed(() => Math.max(1, Math.ceil(filteredPosts.value.length / PAGE_SIZE)))
+
+const currentPage = computed({
+  get() {
+    const pageFromQuery = Number(route.query.page)
+    if (!Number.isFinite(pageFromQuery) || pageFromQuery < 1) return 1
+    return Math.min(Math.floor(pageFromQuery), totalPages.value)
+  },
+  set(page: number) {
+    const nextPage = Math.min(Math.max(1, page), totalPages.value)
+    router.push({
+      query: {
+        ...route.query,
+        page: nextPage === 1 ? undefined : String(nextPage)
+      }
+    })
+  }
+})
+
+const paginatedPosts = computed(() => {
+  const start = (currentPage.value - 1) * PAGE_SIZE
+  return filteredPosts.value.slice(start, start + PAGE_SIZE)
+})
+
 function handleChangeCategory(category: string) {
   selectedCategory.value = category
+  currentPage.value = 1
 }
 </script>

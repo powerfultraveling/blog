@@ -1,8 +1,8 @@
 <template>
   <div class="container pb-10 px-6">
-    <div class="flex flex-col py-10 max-w-[700px] mx-auto">
+    <div class="flex flex-col py-10 max-w-[768px] mx-auto">
       <div class="mb-10">
-        <div class="mb-10">
+        <div class="mb-10 pb-5 border-b border-gray-500">
           <div class="flex items-center justify-between">
             <h1 class="text-8xl font-serif mb-5">{{ props.title }}</h1>
             <PLink v-if="props.isAdmin" :to="props.linkToEdit" class="btn">編輯</PLink>
