@@ -6,8 +6,10 @@
     <div class="content py-4">
       <ul class="space-y-2">
         <li v-for="(item, i) in info.items" :key="i">
-          <div class="dot">
-            <div />
+          <div class="pt-2">
+            <div class="dot">
+              <div />
+            </div>
           </div>
           <div class="font-sans max-w-[700px]">{{ item }}</div>
         </li>
@@ -29,17 +31,17 @@ defineProps<Props>()
 
 <style scoped>
 .content-block {
-  @apply font-serif lg:grid lg:grid-cols-12 gap-x-4;
+  @apply font-serif;
 
   .title {
-    @apply text-4xl mb-4 lg:mb-0 lg:col-start-1 lg:col-end-3;
+    @apply text-4xl mb-4;
   }
 
   .content {
-    @apply border-l border-black pl-10 text-lg lg:col-start-3 lg:col-end-13;
+    @apply border-l border-black pl-10 text-lg;
 
     li {
-      @apply flex items-center space-x-2;
+      @apply flex items-start space-x-2;
     }
   }
 

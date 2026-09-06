@@ -1,7 +1,7 @@
 <template>
-  <div class="pt-10">
+  <div class="pt-10 max-w-[780px] container mx-auto">
     <AboutTitle />
-    <!-- <AboutBrief />  -->
+    <AboutBrief />
     <AboutContent />
   </div>
 </template>
