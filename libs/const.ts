@@ -6,6 +6,8 @@ export const ARTICLES_META_URL =
 
 export const ALL_VALUE = 'all'
 
+export const OTHERS_CATEGORY_SLUG = 'Others'
+
 export const PAGE_LINK = {
   HOME: '/',
   ABOUT: '/about',
