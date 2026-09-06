@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex justify-center mb-20 lg:mb-30">
+  <div class="container flex justify-center mb-10 lg:mb-15">
     <div class="relative">
       <div class="moving-block" />
       <div class="title font-serif">關於我</div>
